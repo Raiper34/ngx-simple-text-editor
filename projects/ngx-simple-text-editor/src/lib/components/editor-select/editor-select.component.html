@@ -1,0 +1,3 @@
+<select [ngModel]="button.state" (ngModelChange)="onCommand(button.command, $event)" class="select toolbar-item">
+  <option *ngFor="let i of button.items" [value]="i.value">{{i.label}}</option>
+</select>

@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-simple-text-editor": [
+        "dist/ngx-simple-text-editor/ngx-simple-text-editor",
+        "dist/ngx-simple-text-editor"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

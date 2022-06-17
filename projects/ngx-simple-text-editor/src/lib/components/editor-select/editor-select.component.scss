@@ -1,0 +1,6 @@
+@import '../../styles/base';
+
+option:checked {
+  background-color: $activeColor;
+  color: white;
+}

@@ -1,0 +1,42 @@
+@import '../../styles/base';
+
+$width: 1400px;
+
+.editor-container {
+  position: relative;
+  max-width: $width;
+}
+
+.area {
+  resize: vertical;
+  overflow: auto;
+  border: 1px solid $borderColor;
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 200px;
+  padding: 5px;
+
+  &:focus {
+    outline-color: $activeColor;
+  }
+
+  &:empty:not(:focus):before{
+    content: attr(data-placeholder);
+    color: $borderColor;
+  }
+}
+
+.toolbar {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid $borderColor;
+  padding: 5px;
+
+  &:focus {
+    outline-color: $activeColor;
+  }
+}

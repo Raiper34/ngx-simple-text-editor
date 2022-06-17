@@ -1,0 +1,22 @@
+$borderColor: #bdbdbd;
+$hoverColor: #e0e0e0;
+$activeColor: #424242;
+
+.toolbar-item {
+  border: 0;
+  padding: 8px 14px;
+  background-color: white;
+  border-radius: 5px;
+  margin-right: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &:focus {
+    outline-color: $activeColor;
+  }
+}
+
+

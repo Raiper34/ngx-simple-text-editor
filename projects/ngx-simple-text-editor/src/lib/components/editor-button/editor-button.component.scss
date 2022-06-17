@@ -1,0 +1,17 @@
+@import '../../styles/base';
+
+.button {
+  &:hover {
+    background-color: $hoverColor;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 1px 1px 7px 1px $hoverColor;
+  }
+
+  &.active {
+    background-color: $activeColor;
+    color: white;
+  }
+}
