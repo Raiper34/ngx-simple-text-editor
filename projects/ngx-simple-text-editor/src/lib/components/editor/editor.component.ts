@@ -69,7 +69,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
   }
 
   prompt(command: string, text: string): void {
-    const value = prompt(text);
+    const value = prompt(text); // todo move to input component
     this.execCommand(command, value);
   }
 

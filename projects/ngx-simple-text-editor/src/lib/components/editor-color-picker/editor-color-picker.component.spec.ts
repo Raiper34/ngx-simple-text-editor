@@ -22,4 +22,10 @@ describe('EditorColorPickerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should convert rgb to hex', () => {
+    const rgb = 'rgb(255,255,255)';
+    const hex = component.rgbStringToHex(rgb);
+    expect(hex).toBe('#ffffff');
+  });
 });
