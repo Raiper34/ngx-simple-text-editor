@@ -15,6 +15,7 @@ import {ToolbarItemType} from '../../models/button';
 export class EditorComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() buttons = BUTTONS;
+  @Input() placeholder = '';
   content = '';
   toolbarItemType = ToolbarItemType;
   @ViewChild('contentEditable') contentEditable: ElementRef;
