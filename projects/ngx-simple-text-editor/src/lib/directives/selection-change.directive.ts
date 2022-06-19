@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, Inject, Output} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Inject, Output} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 
 @Directive({
@@ -9,13 +9,12 @@ export class SelectionChangeDirective {
   @Output('stSelectionChange') selectionChange = new EventEmitter<void>();
 
   constructor(@Inject(DOCUMENT) private readonly document: any,
-              private readonly element: ElementRef) {
-    if (this.document) {
-      this.document.onselectionchange = () => {
-        if (this.document.activeElement === element.nativeElement) {
-          this.selectionChange.next();
-        }
-      };
+              private readonly element: ElementRef) { }
+
+  @HostListener('document:selectionchange')
+  selectionchange(): void {
+    if (this.document.activeElement === this.element.nativeElement) {
+      this.selectionChange.emit();
     }
   }
 
