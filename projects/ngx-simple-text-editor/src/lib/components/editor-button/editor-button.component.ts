@@ -12,8 +12,6 @@ export class EditorButtonComponent {
   @Input() button: EditorButton;
   @Output() command = new EventEmitter<ExecCommand>();
 
-  constructor() { }
-
   onCommand(command: ExecCommand): void {
     this.command.emit(command);
   }

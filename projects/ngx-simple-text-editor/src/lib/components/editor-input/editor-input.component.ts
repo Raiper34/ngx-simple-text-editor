@@ -12,8 +12,6 @@ export class EditorInputComponent {
   @Input() button: EditorInput;
   @Output() command = new EventEmitter<{command: ExecCommand, value: string}>();
 
-  constructor() { }
-
   onCommand(command: ExecCommand): void {
     const value = prompt(this.button.text);
     this.command.emit({command, value});

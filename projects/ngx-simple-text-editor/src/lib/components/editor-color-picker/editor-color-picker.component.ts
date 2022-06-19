@@ -12,8 +12,6 @@ export class EditorColorPickerComponent {
   @Input() button: EditorColor;
   @Output() command = new EventEmitter<{command: ExecCommand, value: string}>();
 
-  constructor() { }
-
   onCommand(command: ExecCommand, value: string): void {
     this.command.emit({command, value});
   }
