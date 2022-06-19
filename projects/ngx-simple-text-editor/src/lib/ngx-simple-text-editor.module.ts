@@ -7,6 +7,8 @@ import {EditorSelectComponent} from './components/editor-select/editor-select.co
 import {EditorSeparatorComponent} from './components/editor-separator/editor-separator.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import { DomModifyDirective } from './directives/dom-modify.directive';
+import { SelectionChangeDirective } from './directives/selection-change.directive';
 
 
 
@@ -18,6 +20,8 @@ import {CommonModule} from '@angular/common';
     EditorInputComponent,
     EditorSelectComponent,
     EditorSeparatorComponent,
+    DomModifyDirective,
+    SelectionChangeDirective,
   ],
   imports: [
     CommonModule,

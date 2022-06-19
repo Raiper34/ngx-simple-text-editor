@@ -1,8 +1,9 @@
-import {AfterViewInit, Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {ST_BUTTONS} from '../../constants/editor-buttons';
-import {ToolbarItemType} from '../../models/button';
+import {ToolbarItem, ToolbarItemType} from '../../models/button';
+import {CommandService} from '../../services/command.service';
 
 @Component({
   selector: 'st-editor',
@@ -10,24 +11,20 @@ import {ToolbarItemType} from '../../models/button';
   styleUrls: ['./editor.component.scss'],
   providers: [
     {provide: NG_VALUE_ACCESSOR, useExisting: EditorComponent, multi: true},
+    CommandService
   ]
 })
-export class EditorComponent implements ControlValueAccessor, AfterViewInit {
+export class EditorComponent implements ControlValueAccessor {
 
   @Input() buttons = ST_BUTTONS;
   @Input() placeholder = '';
+  @ViewChild('contentEditable') contentEditable: ElementRef;
   content = '';
   toolbarItemType = ToolbarItemType;
-  @ViewChild('contentEditable') contentEditable: ElementRef;
   onChangeFn: (val: string) => void;
 
-  constructor(@Inject(DOCUMENT) private readonly document: any) {
-    this.document.onselectionchange = () => {
-      if (this.document.activeElement === this.contentEditable.nativeElement) {
-        this.queryCommandState();
-      }
-    };
-  }
+  constructor(@Inject(DOCUMENT) private readonly document: any,
+              private readonly commandService: CommandService) { }
 
   writeValue(val: string): void {
     this.content = val;
@@ -45,27 +42,20 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     // throw new Error('Method not implemented.');
   }
 
-  ngAfterViewInit(): void {
-    this.contentEditable.nativeElement.addEventListener(
-      'DOMSubtreeModified',
-      () => this.onChangeFn(this.contentEditable.nativeElement.innerHTML),
-      false
-    );
-  }
-
-  queryCommandState(): void {
-    this.buttons = this.buttons.map(item => item.type !== ToolbarItemType.Separator ? ({
-      ...item,
-      state: item.type === ToolbarItemType.Select || item.type === ToolbarItemType.Color ?
-        this.document.queryCommandValue(String(item.command)) :
-        this.document.queryCommandState(String(item.command)),
-    }) : item);
+  domModify(): void {
+    if (this.contentEditable) {
+      this.onChangeFn(this.contentEditable.nativeElement.innerHTML);
+    }
   }
 
   execCommand(command: string, value?: any): void {
     this.contentEditable.nativeElement.focus();
-    this.document.execCommand(command, false, value);
+    this.commandService.execCommand(command, value);
     this.queryCommandState();
+  }
+
+  queryCommandState(): void {
+    this.buttons = this.commandService.queryCommandState(this.buttons);
   }
 
   trackBy(_, item: any): string {

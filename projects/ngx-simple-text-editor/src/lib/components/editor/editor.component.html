@@ -20,5 +20,6 @@
       </st-input>
     </ng-container>
   </div>
-  <div #contentEditable contenteditable="true" class="st-area" [attr.data-placeholder]="placeholder"></div>
+  <div #contentEditable contenteditable="true" class="st-area"
+       [attr.data-placeholder]="placeholder" (stDomModify)="domModify()" (stSelectionChange)="queryCommandState()"></div>
 </div>
