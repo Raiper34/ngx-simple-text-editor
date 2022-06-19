@@ -4,7 +4,7 @@ import {NgxSimpleTextEditorModule} from 'ngx-simple-text-editor';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
+import {HIGHLIGHT_OPTIONS, HighlightModule} from 'ngx-highlightjs';
 
 @NgModule({
   declarations: [

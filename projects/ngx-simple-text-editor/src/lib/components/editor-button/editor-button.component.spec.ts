@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditorButtonComponent } from './editor-button.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
-import {By} from "@angular/platform-browser";
+import {By} from '@angular/platform-browser';
 
 describe('WysiwygEditorButtonComponent', () => {
   let component: EditorButtonComponent;
