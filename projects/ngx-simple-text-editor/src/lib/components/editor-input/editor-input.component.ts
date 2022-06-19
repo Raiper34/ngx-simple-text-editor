@@ -14,7 +14,8 @@ export class EditorInputComponent {
 
   constructor() { }
 
-  onCommand(command: ExecCommand, value: string): void {
+  onCommand(command: ExecCommand): void {
+    const value = prompt(this.button.text);
     this.command.emit({command, value});
   }
 

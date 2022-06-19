@@ -29,6 +29,8 @@
     "@angular/platform-browser-dynamic": "~9.1.13",
     "@angular/router": "~9.1.13",
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "bulma": "^0.9.4",
+    "ngx-highlightjs": "^4.1.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -42,6 +44,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "copy-files-from-to": "^3.2.2",
     "coveralls": "^3.1.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",

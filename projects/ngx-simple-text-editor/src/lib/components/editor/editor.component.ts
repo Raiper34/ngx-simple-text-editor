@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {BUTTONS} from '../../models/editor-buttons';
+import {ST_BUTTONS} from '../../constants/editor-buttons';
 import {ToolbarItemType} from '../../models/button';
 
 @Component({
@@ -14,7 +14,7 @@ import {ToolbarItemType} from '../../models/button';
 })
 export class EditorComponent implements ControlValueAccessor, AfterViewInit {
 
-  @Input() buttons = BUTTONS;
+  @Input() buttons = ST_BUTTONS;
   @Input() placeholder = '';
   content = '';
   toolbarItemType = ToolbarItemType;
@@ -47,7 +47,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.contentEditable.nativeElement.addEventListener(
-      'input',
+      'DOMSubtreeModified',
       () => this.onChangeFn(this.contentEditable.nativeElement.innerHTML),
       false
     );
@@ -66,11 +66,6 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     this.contentEditable.nativeElement.focus();
     this.document.execCommand(command, false, value);
     this.queryCommandState();
-  }
-
-  prompt(command: string, text: string): void {
-    const value = prompt(text); // todo move to input component
-    this.execCommand(command, value);
   }
 
   trackBy(_, item: any): string {

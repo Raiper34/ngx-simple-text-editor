@@ -1,7 +1,7 @@
-import {ExecCommand} from './exec-command';
-import {ToolbarItem, ToolbarItemType} from './button';
+import {ExecCommand} from '../models/exec-command';
+import {ToolbarItem, ToolbarItemType} from '../models/button';
 
-export const BUTTONS: ToolbarItem[] = [
+export const ST_BUTTONS: ToolbarItem[] = [
   {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'fas fa-undo', state: false},
   {type: ToolbarItemType.Button, command: ExecCommand.redo, icon: 'fas fa-redo', state: false},
   {type: ToolbarItemType.Button, command: ExecCommand.removeFormat, icon: 'fas fa-remove-format', state: false},
@@ -36,8 +36,8 @@ export const BUTTONS: ToolbarItem[] = [
       {value: 7, label: '7'},
     ]
   },
-  {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette', state: 'rgb(0, 0, 0)'},
-  {type: ToolbarItemType.Separator},
   {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'fas fa-link', text: 'Create link'},
   {type: ToolbarItemType.Button, command: ExecCommand.unlink, icon: 'fas fa-unlink', state: ''},
+  {type: ToolbarItemType.Separator},
+  {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette', state: 'rgb(0, 0, 0)'},
 ];

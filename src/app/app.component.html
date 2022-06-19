@@ -1,2 +1,64 @@
-<st-editor [(ngModel)]="content" placeholder="Type something..."></st-editor>
-<pre><code>{{content}}</code></pre>
+<!-- Header -->
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title">
+        Ngx Simple Text Editor
+      </p>
+      <div class="subtitle">
+        Simple text editor for your Angular project.
+      </div>
+      <div>
+        <img src="/assets/ngx-simple-text-editor.svg" alt="ngx simple text editor">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Example -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="subtitle">
+        Example
+      </div>
+      <div>
+        <st-editor [(ngModel)]="content" placeholder="Type something..."></st-editor>
+        <br>
+        <article class="message">
+          <div class="message-header">
+            <p>Output</p>
+          </div>
+          <div class="message-body code-background">
+            <pre class="code-background"><code [highlight]="content"></code></pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Installation and usage -->
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <div class="subtitle">
+        Installation and usage
+      </div>
+      <div>
+        Install library using <div class="tag is-dark">npm install ngx-simple-text-editor --save</div> and then add <div class="tag is-dark">NgxSimpleTextEditorModule</div> into module imports.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Ngx simple text editor</strong> by <a href="https://gulan.eu">Filip Raiper34 Gulan</a>. The source code is
+      licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>

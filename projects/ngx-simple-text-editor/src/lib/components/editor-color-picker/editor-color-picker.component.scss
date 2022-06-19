@@ -1,6 +1,6 @@
 @import '../../styles/base';
 
-.button {
+.st-button {
   &:hover {
     background-color: $hoverColor;
   }
@@ -16,7 +16,7 @@
   }
 }
 
-.color-picker {
+.st-color-picker {
   width: 0;
   height: 0;
   border: 0;

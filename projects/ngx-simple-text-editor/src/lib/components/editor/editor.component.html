@@ -1,5 +1,5 @@
-<div class="editor-container">
-  <div class="toolbar" tabIndex="0">
+<div class="st-editor-container">
+  <div class="st-toolbar" tabIndex="0">
     <ng-container *ngFor="let item of buttons; trackBy:trackBy" [ngSwitch]="item.type">
       <st-separator *ngSwitchCase="toolbarItemType.Separator"></st-separator>
       <st-button *ngIf="item.type === toolbarItemType.Button"
@@ -16,9 +16,9 @@
       </st-color-picker>
       <st-input *ngSwitchCase="toolbarItemType.Input"
                         [button]="item"
-                        (command)="prompt($event.command, $event.value)">
+                        (command)="execCommand($event.command, $event.value)">
       </st-input>
     </ng-container>
   </div>
-  <div #contentEditable contenteditable="true" class="area" [attr.data-placeholder]="placeholder"></div>
+  <div #contentEditable contenteditable="true" class="st-area" [attr.data-placeholder]="placeholder"></div>
 </div>
