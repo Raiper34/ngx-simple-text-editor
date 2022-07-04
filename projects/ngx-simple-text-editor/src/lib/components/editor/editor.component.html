@@ -1,6 +1,6 @@
-<div class="st-editor-container">
+<div class="st-editor-container" [class.disabled]="isDisabled">
   <div class="st-toolbar" tabIndex="0">
-    <ng-container *ngFor="let item of buttons; trackBy:trackBy" [ngSwitch]="item.type">
+    <ng-container *ngFor="let item of _config.buttons; trackBy:trackBy" [ngSwitch]="item.type">
       <st-separator *ngSwitchCase="toolbarItemType.Separator"></st-separator>
       <st-button *ngIf="item.type === toolbarItemType.Button"
                                  [button]="item"
@@ -20,6 +20,7 @@
       </st-input>
     </ng-container>
   </div>
-  <div #contentEditable contenteditable="true" class="st-area"
-       [attr.data-placeholder]="placeholder" (stDomModify)="domModify()" (stSelectionChange)="queryCommandState()"></div>
+  <div #contentEditable class="st-area"
+       [attr.data-placeholder]="_config.placeholder" [attr.contenteditable]="!isDisabled"
+       (stDomModify)="domModify()" (stSelectionChange)="fetchQueryCommandState()" (blur)="onTouchedFn()"></div>
 </div>

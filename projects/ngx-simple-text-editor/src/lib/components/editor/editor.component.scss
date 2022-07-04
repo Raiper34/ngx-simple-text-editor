@@ -2,6 +2,11 @@
 
 .st-editor-container {
   position: relative;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }
 
 .st-area {

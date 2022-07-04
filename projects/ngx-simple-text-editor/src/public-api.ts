@@ -12,3 +12,5 @@ export * from './lib/components/editor-separator/editor-separator.component';
 export * from './lib/models/exec-command';
 export * from './lib/constants/editor-buttons';
 export * from './lib/models/button';
+export * from './lib/models/config';
+

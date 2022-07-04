@@ -23,7 +23,7 @@
         Example
       </div>
       <div>
-        <st-editor [(ngModel)]="content" placeholder="Type something..."></st-editor>
+        <st-editor [(ngModel)]="content" [config]="config" [disabled]="content.length > 100"></st-editor>
         <br>
         <article class="message">
           <div class="message-header">

@@ -1,5 +1,13 @@
 import {Inject, Injectable} from '@angular/core';
-import {EditorColor, EditorInput, EditorSelect, Separator, ToolbarItem, ToolbarItemType} from '../models/button';
+import {
+  EditorButton,
+  EditorColor,
+  EditorInput,
+  EditorSelect,
+  Separator,
+  ToolbarItem,
+  ToolbarItemType
+} from '../models/button';
 import {DOCUMENT} from '@angular/common';
 
 @Injectable()
@@ -11,17 +19,19 @@ export class CommandService {
     return item.type === ToolbarItemType.Select || item.type === ToolbarItemType.Color;
   }
 
-  private isCommandWithoutValueOrState(item: ToolbarItem): item is (Separator | EditorInput) {
-    return item.type === ToolbarItemType.Separator || item.type === ToolbarItemType.Input;
+  private isCommandWithState(item: ToolbarItem): item is EditorButton {
+    return item.type === ToolbarItemType.Button;
   }
 
-  queryCommandState(buttons: ToolbarItem[]): ToolbarItem[] {
-    return buttons.map(item => this.isCommandWithoutValueOrState(item) ? item : ({
-      ...item,
-      state: this.isCommandWithValue(item) ?
-        this.document.queryCommandValue(String(item.command)) :
-        this.document.queryCommandState(String(item.command)),
-    })) as ToolbarItem[];
+  getQueryCommandState(buttons: ToolbarItem[]): {[key: string]: string | number | boolean} {
+    return buttons
+      .filter(item => this.isCommandWithValue(item) || this.isCommandWithState(item))
+      .reduce((acc, curr: (EditorSelect | EditorColor | EditorButton)) => ({
+        ...acc,
+        [curr.command]: this.isCommandWithValue(curr) ?
+          this.document.queryCommandValue(String(curr.command)) :
+          this.document.queryCommandState(String(curr.command)),
+      }), {});
   }
 
   execCommand(command: string, value?: any): void {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {EditorConfig, ST_BUTTONS} from 'ngx-simple-text-editor';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   content = '';
+  config: EditorConfig = {
+    placeholder: 'Type something...',
+    buttons: ST_BUTTONS,
+  };
 }

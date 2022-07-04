@@ -2,8 +2,14 @@ import {Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {ST_BUTTONS} from '../../constants/editor-buttons';
-import {ToolbarItem, ToolbarItemType} from '../../models/button';
+import {ToolbarItemType} from '../../models/button';
 import {CommandService} from '../../services/command.service';
+import {EditorConfig} from '../../models/config';
+
+const DEFAULT_CONFIG: EditorConfig = {
+  placeholder: '',
+  buttons: ST_BUTTONS,
+};
 
 @Component({
   selector: 'st-editor',
@@ -16,12 +22,17 @@ import {CommandService} from '../../services/command.service';
 })
 export class EditorComponent implements ControlValueAccessor {
 
-  @Input() buttons = ST_BUTTONS;
-  @Input() placeholder = '';
+  @Input() set config(val: EditorConfig) {
+    this._config = {...DEFAULT_CONFIG, ...(val || {})};
+  }
+  _config: EditorConfig;
   @ViewChild('contentEditable') contentEditable: ElementRef;
   content = '';
   toolbarItemType = ToolbarItemType;
+  isDisabled = false;
   onChangeFn: (val: string) => void;
+  onTouchedFn: () => void;
+  queryCommandState: {[key: string]: string | number | boolean} = {};
 
   constructor(@Inject(DOCUMENT) private readonly document: any,
               private readonly commandService: CommandService) { }
@@ -34,12 +45,12 @@ export class EditorComponent implements ControlValueAccessor {
     this.onChangeFn = fn;
   }
 
-  registerOnTouched(fn: any): void {
-    // throw new Error('Method not implemented.');
+  registerOnTouched(fn: () => void): void {
+    this.onTouchedFn = fn;
   }
 
   setDisabledState?(isDisabled: boolean): void {
-    // throw new Error('Method not implemented.');
+    this.isDisabled = isDisabled;
   }
 
   domModify(): void {
@@ -51,11 +62,11 @@ export class EditorComponent implements ControlValueAccessor {
   execCommand(command: string, value?: any): void {
     this.contentEditable.nativeElement.focus();
     this.commandService.execCommand(command, value);
-    this.queryCommandState();
+    this.fetchQueryCommandState();
   }
 
-  queryCommandState(): void {
-    this.buttons = this.commandService.queryCommandState(this.buttons);
+  fetchQueryCommandState(): void {
+    this.queryCommandState = this.commandService.getQueryCommandState(this.config.buttons);
   }
 
   trackBy(_, item: any): string {

@@ -11,14 +11,12 @@ export enum ToolbarItemType {
 export interface EditorButton extends ToolbarBaseItem {
   type: ToolbarItemType.Button;
   command: ExecCommand;
-  state: boolean | number | string;
   icon: string;
 }
 
 export interface EditorColor extends ToolbarBaseItem {
   type: ToolbarItemType.Color;
   command: ExecCommand;
-  state: boolean | number | string;
   icon: string;
 }
 
@@ -32,7 +30,6 @@ export interface EditorInput extends ToolbarBaseItem {
 export interface EditorSelect extends ToolbarBaseItem {
   type: ToolbarItemType.Select;
   command: ExecCommand;
-  state: boolean | number | string;
   items: { value: number | string, label: string }[];
 }
 
