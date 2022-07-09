@@ -10,6 +10,7 @@ import {ExecCommand} from '../../models/exec-command';
 export class EditorSelectComponent {
 
   @Input() button: EditorSelect;
+  @Input() state: string | number | boolean;
   @Output() command = new EventEmitter<{command: ExecCommand, value: string}>();
 
   onCommand(command: ExecCommand, value: string): void {

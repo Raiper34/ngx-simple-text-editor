@@ -3,10 +3,10 @@ import {ExecCommand} from '../models/exec-command';
 import {ToolbarItem, ToolbarItemType} from '../models/button';
 
 const BUTTONS: ToolbarItem[] = [
-  {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'fas fa-undo', state: false},
+  {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'fas fa-undo'},
   {type: ToolbarItemType.Separator},
   {
-    type: ToolbarItemType.Select, command: ExecCommand.fontSize, state: 3, items: [
+    type: ToolbarItemType.Select, command: ExecCommand.fontSize, items: [
       {value: 1, label: '1'},
       {value: 2, label: '2'},
       {value: 3, label: '3'},
@@ -17,7 +17,7 @@ const BUTTONS: ToolbarItem[] = [
     ]
   },
   {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'fas fa-link', text: 'Create link'},
-  {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette', state: 'rgb(0, 0, 0)'},
+  {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette'},
 ];
 
 describe('CommandService', () => {
@@ -48,7 +48,11 @@ describe('CommandService', () => {
   });
 
   it('should query command state', () => {
-    const states = service.queryCommandState(BUTTONS).map(item => (item as any).state);
-    expect(states).toEqual([true,  undefined, 'val', undefined, 'val']);
+    const states = service.getQueryCommandState(BUTTONS);
+    expect(states).toEqual({
+      [ExecCommand.undo]: true,
+      [ExecCommand.fontSize]: 'val',
+      [ExecCommand.foreColor]: 'val',
+    });
   });
 });

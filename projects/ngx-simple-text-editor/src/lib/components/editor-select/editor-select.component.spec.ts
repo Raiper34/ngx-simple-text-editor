@@ -37,12 +37,13 @@ describe('EditorSelectComponent', () => {
 
   it('should choose option and emit command', () => {
     component.button = {
-      type: ToolbarItemType.Select, command: ExecCommand.fontSize, state: '1', items: [
+      type: ToolbarItemType.Select, command: ExecCommand.fontSize, items: [
         {value: '1', label: 'Option 1'},
         {value: '2', label: 'Option 2'},
         {value: '3', label: 'Option 3'},
       ]
     };
+    component.state = '1';
     component.command.emit = jasmine.createSpy();
     fixture.detectChanges();
 

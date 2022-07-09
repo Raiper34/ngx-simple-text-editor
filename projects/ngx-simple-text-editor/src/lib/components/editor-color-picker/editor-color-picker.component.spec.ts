@@ -41,7 +41,8 @@ describe('EditorColorPickerComponent', () => {
   });
 
   it('should click have proper classes', () => {
-    component.button = {type: ToolbarItemType.Color, command: ExecCommand.bold, icon: 'icon', state: '#01FFFF'};
+    component.button = {type: ToolbarItemType.Color, command: ExecCommand.bold, icon: 'icon'};
+    component.state = '#01FFFF';
     fixture.detectChanges();
 
     const iconElement = fixture.debugElement.query(By.css('.icon'));

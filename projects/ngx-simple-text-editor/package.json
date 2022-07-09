@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": ">=9.0.0",
-    "@angular/core": ">=9.0.0"
+    "@angular/core": ">=9.0.0",
+    "@fortawesome/fontawesome-free": "^5.15.4"
   },
   "dependencies": {
     "tslib": "^1.10.0"

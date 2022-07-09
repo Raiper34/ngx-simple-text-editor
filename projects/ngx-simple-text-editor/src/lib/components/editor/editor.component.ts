@@ -25,7 +25,10 @@ export class EditorComponent implements ControlValueAccessor {
   @Input() set config(val: EditorConfig) {
     this._config = {...DEFAULT_CONFIG, ...(val || {})};
   }
-  _config: EditorConfig;
+  get config(): EditorConfig {
+    return this._config;
+  }
+  _config: EditorConfig = DEFAULT_CONFIG;
   @ViewChild('contentEditable') contentEditable: ElementRef;
   content = '';
   toolbarItemType = ToolbarItemType;

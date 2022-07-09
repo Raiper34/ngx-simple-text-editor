@@ -22,7 +22,8 @@ describe('WysiwygEditorButtonComponent', () => {
   });
 
   it('should create', () => {
-    component.button = {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'icon', state: false};
+    component.button = {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'icon'};
+    component.state = false;
     fixture.detectChanges();
 
     expect(component).toBeTruthy();
@@ -36,7 +37,8 @@ describe('WysiwygEditorButtonComponent', () => {
   });
 
   it('should click button and emit command', () => {
-    component.button = {type: ToolbarItemType.Button, command: ExecCommand.bold, icon: 'icon', state: false};
+    component.button = {type: ToolbarItemType.Button, command: ExecCommand.bold, icon: 'icon'};
+    component.state = false;
     component.command.emit = jasmine.createSpy();
     const element = fixture.debugElement.query(By.css('button'));
     element.nativeElement.click();
@@ -45,7 +47,8 @@ describe('WysiwygEditorButtonComponent', () => {
   });
 
   it('should click have proper classes', () => {
-    component.button = {type: ToolbarItemType.Button, command: ExecCommand.bold, icon: 'icon', state: false};
+    component.button = {type: ToolbarItemType.Button, command: ExecCommand.bold, icon: 'icon'};
+    component.state = false;
     fixture.detectChanges();
 
     const iconElement = fixture.debugElement.query(By.css('.icon'));
@@ -54,7 +57,8 @@ describe('WysiwygEditorButtonComponent', () => {
     const buttonActive = fixture.debugElement.query(By.css('.active'));
     expect(buttonActive).toBeFalsy();
 
-    component.button = {...component.button, state: true};
+    component.button = {...component.button};
+    component.state = true;
     fixture.detectChanges();
     const buttonActive2 = fixture.debugElement.query(By.css('.active'));
     expect(buttonActive2).toBeTruthy();
