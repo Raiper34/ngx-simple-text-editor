@@ -1,27 +1,30 @@
-# NgxSimpleTextEditorApp
+[![npm version](https://badge.fury.io/js/ngx-simple-text-editor.svg)](https://badge.fury.io/js/ngx-simple-text-editor)
+[![CircleCI](https://circleci.com/gh/Raiper34/ngx-simple-text-editor.svg?style=shield)](https://circleci.com/gh/Raiper34/ngx-simple-text-editor)
+[![Coverage Status](https://coveralls.io/repos/github/Raiper34/ngx-simple-text-editor/badge.svg?branch=main)](https://coveralls.io/github/Raiper34/ngx-simple-text-editor?branch=main)
+[![GitHub issues](https://img.shields.io/github/issues/Raiper34/ngx-simple-text-editor)](https://github.com/Raiper34/ngx-simple-text-editor/issues)
+![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-simple-text-editor)
+![NPM](https://img.shields.io/npm/l/ngx-simple-text-editor)
+[![demo](https://badgen.net/badge/demo/online/orange)](https://ngx-simple-text-editor.netlify.app/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+![ngc simple text editor logo](logo.svg)
+# Ngx Simple Text editor
+Angular simple text editor component.
 
-## Development server
+# Instalation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm install ngx-simple-text-editor --save`
 
-## Code scaffolding
+then add `NgxSimpleTextEditorModule` into module imports
+```typescript
+import {NgxSimpleTextEditorModule} from 'ngx-simple-text-editor';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+// ...
+  imports: [
+    // ...
+    NgxSimpleTextEditorModule,
+    // ...
+  ],
+// ...
+})
+```

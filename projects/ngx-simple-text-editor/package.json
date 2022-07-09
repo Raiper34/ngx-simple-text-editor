@@ -1,6 +1,11 @@
 {
   "name": "ngx-simple-text-editor",
   "version": "0.0.1",
+  "description": "Angular simple text editor component.",
+  "repository": "https://github.com/Raiper34/ngx-simple-text-editor",
+  "homepage": "https://ngx-simple-text-editor.netlify.app",
+  "keywords": ["angular", "text", "editor", "text editor", "angular text editor", "wysiwyg", "wysiwyg editor"],
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": ">=9.0.0",
     "@angular/core": ">=9.0.0",
