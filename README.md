@@ -8,7 +8,7 @@
 
 ![ngc simple text editor logo](logo.svg)
 # Ngx Simple Text editor
-Angular simple text editor component.
+Ngx Simple Text editor or ST editor is a simple native text editor component for Angular 9+. 
 
 # Instalation
 
@@ -28,3 +28,51 @@ import {NgxSimpleTextEditorModule} from 'ngx-simple-text-editor';
 // ...
 })
 ```
+If you want to use default button icons, you must install Font awesome v5. 
+`npm install @fortawesome/fontawesome-free@5` and declare in styles in angular.json
+```json
+...
+"styles": [
+  "src/styles.scss",
+  "node_modules/@fortawesome/fontawesome-free/css/all.css"
+]
+...
+```
+
+# Usage
+You can use Ngx simple text editor as classic template-driven form input or as reactive form input.
+```angular2html
+<st-editor [(ngModel)]="content" [config]="config"></st-editor>
+```
+The editor has got only one @Input with config object, which is optional.
+The config object is defined by placeholder and buttons, both are optional and can be omitted.  
+```typescript
+import { Component } from '@angular/core';
+import {EditorConfig, ST_BUTTONS} from 'ngx-simple-text-editor';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  content = '';
+  config: EditorConfig = {
+    placeholder: 'Type something...',
+    buttons: ST_BUTTONS,
+  };
+}
+```
+You can pass all predefined buttons with predefined order, or you can use only buttons you want with order as you want.
+```typescript
+import {EditorConfig, UNDO_BUTTON, SEPARATOR, BOLD_BUTTON, ITALIC_BUTTON} from 'ngx-simple-text-editor';
+...
+config: EditorConfig = {
+    buttons: [UNDO_BUTTON, SEPARATOR, BOLD_BUTTON, ITALIC_BUTTON],
+  };
+...
+```
+
+# Demo
+[Online demo](https://ngx-simple-text-editor.netlify.app/)
+or Stackblitz coming soon.
