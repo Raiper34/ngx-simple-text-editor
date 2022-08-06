@@ -24,7 +24,8 @@ import {HIGHLIGHT_OPTIONS, HighlightModule} from 'ngx-highlightjs';
         languages: {
           typescript: () => import('highlight.js/lib/languages/typescript'),
           css: () => import('highlight.js/lib/languages/css'),
-          xml: () => import('highlight.js/lib/languages/xml')
+          xml: () => import('highlight.js/lib/languages/xml'),
+          json: () => import('highlight.js/lib/languages/json')
         }
       }
     }
