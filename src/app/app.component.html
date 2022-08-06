@@ -30,7 +30,10 @@
             <p>Output</p>
           </div>
           <div class="message-body code-background">
-            <pre class="code-background"><code [highlight]="content"></code></pre>
+            <pre class="code-background">
+              <code *ngIf="content" [highlight]="content"></code> <!-- Workaround for highlight directive -->
+              <code *ngIf="!content"></code> <!-- Workaround for highlight directive -->
+            </pre>
           </div>
         </article>
       </div>
