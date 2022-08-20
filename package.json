@@ -15,6 +15,7 @@
     "lint:lib": "ng lint ngx-simple-text-editor",
     "lint:lib:fix": "ng lint ngx-simple-text-editor --fix",
     "e2e": "ng e2e",
+    "changelog": "auto-changelog",
     "deploy": "npm run build && netlify deploy --dir=dist/ngx-simple-text-editor-app --prod",
     "publish": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish"
   },
@@ -43,6 +44,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "auto-changelog": "^2.4.0",
     "codelyzer": "^5.1.2",
     "copy-files-from-to": "^3.2.2",
     "coveralls": "^3.1.1",
@@ -69,6 +71,15 @@
     {
       "from": "CHANGELOG.md",
       "to": "dist/ngx-simple-text-editor/CHANGELOG.md"
+    },
+    {
+      "from": "logo.svg",
+      "to": "dist/ngx-simple-text-editor/logo.svg"
     }
-  ]
+  ],
+  "auto-changelog": {
+    "commitLimit": 30,
+    "hideCredit": true,
+    "startingVersion": "1.1.0"
+  }
 }
