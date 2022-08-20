@@ -55,6 +55,8 @@ export const LINK_INPUT: EditorInput =
 export const UNLINK_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.unlink, icon: 'fas fa-unlink'};
 export const FORE_COLOR: EditorColor =
   {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette'};
+export const IMAGE_INPUT: EditorInput =
+  {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image'};
 
 export const ST_BUTTONS: ToolbarItem[] = [
   UNDO_BUTTON,
@@ -84,5 +86,6 @@ export const ST_BUTTONS: ToolbarItem[] = [
   LINK_INPUT,
   UNLINK_BUTTON,
   SEPARATOR,
+  IMAGE_INPUT,
   FORE_COLOR,
 ];
