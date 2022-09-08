@@ -76,3 +76,6 @@ config: EditorConfig = {
 # Demo
 [Online demo](https://ngx-simple-text-editor.netlify.app/)
 or Stackblitz coming soon.
+
+# License
+MIT
