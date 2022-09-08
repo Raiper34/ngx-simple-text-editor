@@ -12,10 +12,19 @@ export class EditorInputComponent {
   @Input() button: EditorInput;
   @Input() state: string | number | boolean;
   @Output() command = new EventEmitter<{command: ExecCommand, value: string}>();
+  showInputWindow = false;
+  value = '';
 
-  onCommand(command: ExecCommand): void {
-    const value = prompt(this.button.text);
-    this.command.emit({command, value});
+  onCommand(): void {
+    if (this.value) {
+      this.toggleInputVisibility();
+      this.command.emit({command: this.button.command, value: this.value});
+      this.value = '';
+    }
+  }
+
+  toggleInputVisibility(): void {
+    this.showInputWindow = !this.showInputWindow;
   }
 
 }

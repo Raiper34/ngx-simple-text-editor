@@ -1,0 +1,29 @@
+@import '../../styles/base';
+
+.st-input-window {
+  display: flex;
+  background-color: white;
+  position: absolute;
+  padding: 10px;
+  top: 5px;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  box-shadow: 0 3px 7px $borderColor;
+}
+
+.st-input-input {
+  padding: 8px 14px;
+  background-color: white;
+  margin-right: -1px;
+  border: 1px solid $borderColor;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.st-input-button {
+  @extend .st-toolbar-item;
+  margin-right: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: 1px solid $borderColor;
+}

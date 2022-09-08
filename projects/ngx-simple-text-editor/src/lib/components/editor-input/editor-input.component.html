@@ -1,1 +1,5 @@
-<st-button [button]="button" [state]="state" (command)="onCommand($event)"></st-button>
+<st-button [button]="button" [state]="state" (command)="toggleInputVisibility()"></st-button>
+<div *ngIf="showInputWindow" class="st-input-window" (mouseleave)="toggleInputVisibility()">
+  <input class="st-input-input" type="text" [(ngModel)]="value">
+  <button class="st-input-button" (click)="onCommand()">Confirm</button>
+</div>
