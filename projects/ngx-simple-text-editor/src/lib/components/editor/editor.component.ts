@@ -42,6 +42,9 @@ export class EditorComponent implements ControlValueAccessor {
 
   writeValue(val: string): void {
     this.content = val;
+    if (this.contentEditable) {
+      this.contentEditable.nativeElement.innerHTML = val;
+    }
   }
 
   registerOnChange(fn: (val: string) => void): void {
