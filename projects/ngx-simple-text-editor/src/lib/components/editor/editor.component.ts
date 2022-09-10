@@ -72,6 +72,7 @@ export class EditorComponent implements ControlValueAccessor {
   }
 
   fetchQueryCommandState(): void {
+    console.log(this.commandService.getQueryCommandState);
     this.queryCommandState = this.commandService.getQueryCommandState(this.config.buttons);
   }
 
