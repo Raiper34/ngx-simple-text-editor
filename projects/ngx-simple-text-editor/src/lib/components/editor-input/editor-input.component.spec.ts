@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EditorInputComponent } from './editor-input.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
@@ -28,7 +27,44 @@ describe('EditorInputComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit command and prompt value', () => {
+  it('should show toggle input window visibility', () => {
+    component.toggleInputVisibility();
+    expect(component.showInputWindow).toBeTrue();
+    component.toggleInputVisibility();
+    expect(component.showInputWindow).toBeFalse();
+  });
+
+  it('should emit command when value is defined', () => {
+    const command = ExecCommand.createLink;
+    const value = 'www.example.com';
+    component.value = value;
+    component.showInputWindow = true;
+    component.command.emit = jasmine.createSpy('emit');
+    component.button = {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'link', text: 'Url'};
+
+    component.onCommand();
+
+    expect(component.showInputWindow).toBeFalse();
+    expect(component.value).toBe('');
+    expect(component.command.emit).toHaveBeenCalledWith({command, value});
+  });
+
+  it('should not emit command when value is undefined', () => {
+    const command = ExecCommand.createLink;
+    const value = 'www.example.com';
+    component.value = '';
+    component.showInputWindow = true;
+    component.command.emit = jasmine.createSpy('emit');
+    component.button = {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'link', text: 'Url'};
+
+    component.onCommand();
+
+    expect(component.showInputWindow).toBeTrue();
+    expect(component.value).toBe('');
+    expect(component.command.emit).not.toHaveBeenCalled();
+  });
+
+  /*it('should emit command and prompt value', () => {
     const promptValue = 'www.example.com';
     const command = ExecCommand.createLink;
 
@@ -38,5 +74,5 @@ describe('EditorInputComponent', () => {
 
     component.onCommand(command);
     expect(component.command.emit).toHaveBeenCalledWith({command, value: promptValue});
-  });
+  });*/
 });
