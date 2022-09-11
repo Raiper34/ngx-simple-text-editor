@@ -78,8 +78,9 @@
     }
   ],
   "auto-changelog": {
+    "ignoreCommitPattern": "(test\\()|(release\\()|(chore\\()",
     "commitLimit": 30,
     "hideCredit": true,
-    "startingVersion": "1.1.0"
+    "startingVersion": "1.2.0"
   }
 }
