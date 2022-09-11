@@ -12,14 +12,14 @@ export interface EditorButton extends ToolbarBaseItem {
   type: ToolbarItemType.Button;
   command: ExecCommand;
   icon: string;
-  title: string;
+  title?: string;
 }
 
 export interface EditorColor extends ToolbarBaseItem {
   type: ToolbarItemType.Color;
   command: ExecCommand;
   icon: string;
-  title: string;
+  title?: string;
 }
 
 export interface EditorInput extends ToolbarBaseItem {
@@ -27,14 +27,14 @@ export interface EditorInput extends ToolbarBaseItem {
   command: ExecCommand;
   icon: string;
   text: string;
-  title: string;
+  title?: string;
 }
 
 export interface EditorSelect extends ToolbarBaseItem {
   type: ToolbarItemType.Select;
   command: ExecCommand;
   items: { value: number | string, label: string }[];
-  title: string;
+  title?: string;
 }
 
 export interface Separator extends ToolbarBaseItem {
