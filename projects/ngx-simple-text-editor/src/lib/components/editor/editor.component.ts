@@ -23,7 +23,7 @@ const DEFAULT_CONFIG: EditorConfig = {
 export class EditorComponent implements ControlValueAccessor {
 
   @Input() set config(val: EditorConfig) {
-    this._config = {...DEFAULT_CONFIG, ...(val || {})};
+    this._config = {...DEFAULT_CONFIG, ...val};
   }
   get config(): EditorConfig {
     return this._config;
@@ -72,7 +72,6 @@ export class EditorComponent implements ControlValueAccessor {
   }
 
   fetchQueryCommandState(): void {
-    console.log(this.commandService.getQueryCommandState);
     this.queryCommandState = this.commandService.getQueryCommandState(this.config.buttons);
   }
 

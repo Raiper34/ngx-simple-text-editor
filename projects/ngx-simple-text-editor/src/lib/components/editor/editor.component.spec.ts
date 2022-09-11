@@ -21,68 +21,110 @@ class TestComponent {
 }
 
 describe('EditorComponent', () => {
-  let component: TestComponent;
-  let fixture: ComponentFixture<TestComponent>;
+  let componentTest: TestComponent;
+  let componentEditor: EditorComponent;
+  let fixtureTest: ComponentFixture<TestComponent>;
+  let fixtureEditor: ComponentFixture<EditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent, EditorComponent ],
       imports: [FormsModule],
-    });
+    }).compileComponents();
     TestBed.overrideComponent(EditorComponent, {
       set: {
         providers: [
           {provide: NG_VALUE_ACCESSOR, useExisting: EditorComponent, multi: true},
-          {provide: CommandService, useValue: jasmine.createSpyObj({getQueryCommandState: {getQueryCommandState: true}})}
+          {provide: CommandService, useValue: jasmine.createSpyObj({
+              getQueryCommandState: {getQueryCommandState: true},
+              execCommand: undefined
+            })}
         ]
       }
-    })
-    .compileComponents();
+    });
   }));
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixtureTest = TestBed.createComponent(TestComponent);
+    fixtureEditor = TestBed.createComponent(EditorComponent);
+    componentTest = fixtureTest.componentInstance;
+    componentEditor = fixtureEditor.componentInstance;
+    fixtureTest.detectChanges();
+    fixtureEditor.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(componentEditor).toBeTruthy();
   });
 
   it('should update editor when model variable is updated', async(() => {
     const myValue = 'My value';
-    component.content = myValue;
-    fixture.detectChanges();
-    const area = fixture.debugElement.query(By.css('#editor-1'));
-    fixture.whenStable().then(() => expect(area.nativeElement.innerText).toBe(myValue));
+    componentTest.content = myValue;
+    fixtureTest.detectChanges();
+    const area = fixtureTest.debugElement.query(By.css('#editor-1'));
+    fixtureTest.whenStable().then(() => expect(area.nativeElement.innerText).toBe(myValue));
   }));
 
   it('should be disabled when disabled state is active', async(() => {
-    fixture.whenStable().then(() => {
-      fixture.detectChanges();
-      const area1 = fixture.debugElement.query(By.css('#editor-1 .st-area'));
+    fixtureTest.whenStable().then(() => {
+      fixtureTest.detectChanges();
+      const area1 = fixtureTest.debugElement.query(By.css('#editor-1 .st-area'));
       expect(area1.nativeElement.getAttribute('contenteditable')).toBe('true');
-      const area2 = fixture.debugElement.query(By.css('#editor-2 .st-area'));
+      const area2 = fixtureTest.debugElement.query(By.css('#editor-2 .st-area'));
       expect(area2.nativeElement.getAttribute('contenteditable')).toBe('false');
     });
   }));
 
   it('should setup placeholder', async(() => {
-    fixture.whenStable().then(() => {
-      const area = fixture.debugElement.query(By.css('.st-area'));
+    fixtureTest.whenStable().then(() => {
+      const area = fixtureTest.debugElement.query(By.css('.st-area'));
       expect(area.nativeElement.getAttribute('data-placeholder')).toBe('placeholder');
     });
   }));
 
   it('should call getQueryCommandState', async(() => {
-    const localFixture = TestBed.createComponent(EditorComponent);
-    const localComponent = localFixture.componentInstance;
-    localComponent.config = {buttons: [UNDO_BUTTON]};
-    localFixture.detectChanges();
+    componentEditor.config = {buttons: [UNDO_BUTTON]};
+    fixtureEditor.detectChanges();
 
-    localComponent.fetchQueryCommandState();
-    expect(localComponent.queryCommandState).toEqual({getQueryCommandState: true});
+    componentEditor.fetchQueryCommandState();
+
+    expect(componentEditor.queryCommandState).toEqual({getQueryCommandState: true});
+  }));
+
+  it('should call getQueryCommandState', async(() => {
+    componentEditor.config = {buttons: [UNDO_BUTTON]};
+    fixtureEditor.detectChanges();
+
+    componentEditor.fetchQueryCommandState();
+
+    expect(componentEditor.queryCommandState).toEqual({getQueryCommandState: true});
+  }));
+
+  it('should focus contentEditable and call execCommand', async(() => {
+    const service = fixtureEditor.debugElement.injector.get(CommandService);
+    componentEditor.config = {buttons: [UNDO_BUTTON]};
+    fixtureEditor.detectChanges();
+
+    componentEditor.contentEditable = {nativeElement: {focus: jasmine.createSpy('focus')}};
+    componentEditor.execCommand('command', 'val');
+
+    expect(componentEditor.contentEditable.nativeElement.focus).toHaveBeenCalled();
+    expect(service.execCommand).toHaveBeenCalledWith('command', 'val');
+    expect(service.getQueryCommandState).toHaveBeenCalled();
+  }));
+
+  it('should call onChange on dom modify', async(() => {
+    const testHTML = 'Test HTML';
+    componentEditor.onChangeFn = jasmine.createSpy('onChangeFn');
+
+    componentEditor.contentEditable = undefined;
+    componentEditor.domModify();
+    expect(componentEditor.onChangeFn).not.toHaveBeenCalled();
+
+    componentEditor.contentEditable = jasmine.createSpyObj('contentEditable', [], {
+      nativeElement: {innerHTML: testHTML}
+    });
+    componentEditor.domModify();
+    expect(componentEditor.onChangeFn).toHaveBeenCalledWith(testHTML);
   }));
 
 });
