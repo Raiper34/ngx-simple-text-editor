@@ -9,38 +9,38 @@ import {
   ToolbarItemType
 } from '../models/button';
 
-export const UNDO_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'fas fa-undo'};
-export const REDO_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.redo, icon: 'fas fa-redo'};
+export const UNDO_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.undo, icon: 'fas fa-undo', title: 'undo'};
+export const REDO_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.redo, icon: 'fas fa-redo', title: 'redo'};
 export const REMOVE_FORMAT_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.removeFormat, icon: 'fas fa-remove-format'};
+  {type: ToolbarItemType.Button, command: ExecCommand.removeFormat, icon: 'fas fa-remove-format', title: 'remove format'};
 export const SEPARATOR: Separator = {type: ToolbarItemType.Separator};
-export const BOLD_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.bold, icon: 'fas fa-bold'};
-export const ITALIC_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.italic, icon: 'fas fa-italic'};
+export const BOLD_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.bold, icon: 'fas fa-bold', title: 'bold'};
+export const ITALIC_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.italic, icon: 'fas fa-italic', title: 'italic'};
 export const UNDERLINE_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.underline, icon: 'fas fa-underline'};
+  {type: ToolbarItemType.Button, command: ExecCommand.underline, icon: 'fas fa-underline', title: 'underline'};
 export const STRIKE_THROUGH_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.strikeThrough, icon: 'fas fa-strikethrough'};
+  {type: ToolbarItemType.Button, command: ExecCommand.strikeThrough, icon: 'fas fa-strikethrough', title: 'strikethrough'};
 export const JUSTIFY_LEFT_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.justifyLeft, icon: 'fas fa-align-left'};
+  {type: ToolbarItemType.Button, command: ExecCommand.justifyLeft, icon: 'fas fa-align-left', title: 'align left'};
 export const JUSTIFY_CENTER_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.justifyCenter, icon: 'fas fa-align-center'};
+  {type: ToolbarItemType.Button, command: ExecCommand.justifyCenter, icon: 'fas fa-align-center', title: 'align center'};
 export const JUSTIFY_RIGHT_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.justifyRight, icon: 'fas fa-align-right'};
+  {type: ToolbarItemType.Button, command: ExecCommand.justifyRight, icon: 'fas fa-align-right', title: 'align right'};
 export const JUSTIFY_FULL_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.justifyFull, icon: 'fas fa-align-justify'};
+  {type: ToolbarItemType.Button, command: ExecCommand.justifyFull, icon: 'fas fa-align-justify', title: 'align justify'};
 export const ORDERED_LIST_BUTTON: EditorButton =
-    {type: ToolbarItemType.Button, command: ExecCommand.insertOrderedList, icon: 'fas fa-list-ol'};
+    {type: ToolbarItemType.Button, command: ExecCommand.insertOrderedList, icon: 'fas fa-list-ol', title: 'ordered list'};
 export const UNORDERED_LIST_BUTTON: EditorButton =
-    {type: ToolbarItemType.Button, command: ExecCommand.insertUnorderedList, icon: 'fas fa-list-ul'};
-export const INDENT_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.indent, icon: 'fas fa-indent'};
+    {type: ToolbarItemType.Button, command: ExecCommand.insertUnorderedList, icon: 'fas fa-list-ul', title: 'unordered list'};
+export const INDENT_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.indent, icon: 'fas fa-indent', title: 'indent'};
 export const OUTDENT_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.outdent, icon: 'fas fa-outdent'};
+  {type: ToolbarItemType.Button, command: ExecCommand.outdent, icon: 'fas fa-outdent', title: 'outdent'};
 export const SUBSCRIPT_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.subscript, icon: 'fas fa-subscript'};
+  {type: ToolbarItemType.Button, command: ExecCommand.subscript, icon: 'fas fa-subscript', title: 'subscript'};
 export const SUPERSCRIPT_BUTTON: EditorButton =
-  {type: ToolbarItemType.Button, command: ExecCommand.superscript, icon: 'fas fa-superscript'};
+  {type: ToolbarItemType.Button, command: ExecCommand.superscript, icon: 'fas fa-superscript', title: 'superscript'};
 export const FONT_SIZE_SELECT: EditorSelect = {
-  type: ToolbarItemType.Select, command: ExecCommand.fontSize, items: [
+  type: ToolbarItemType.Select, command: ExecCommand.fontSize, title: 'font size', items: [
     {value: 1, label: '1'},
     {value: 2, label: '2'},
     {value: 3, label: '3'},
@@ -51,12 +51,12 @@ export const FONT_SIZE_SELECT: EditorSelect = {
   ]
 };
 export const LINK_INPUT: EditorInput =
-  {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'fas fa-link', text: 'Create link'};
-export const UNLINK_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.unlink, icon: 'fas fa-unlink'};
+  {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'fas fa-link', text: 'Create link', title: 'create link'};
+export const UNLINK_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.unlink, icon: 'fas fa-unlink', title: 'unlink'};
 export const FORE_COLOR: EditorColor =
-  {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette'};
+  {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette', title: 'font color'};
 export const IMAGE_INPUT: EditorInput =
-  {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image'};
+  {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image', title: 'add image'};
 
 export const ST_BUTTONS: ToolbarItem[] = [
   UNDO_BUTTON,
