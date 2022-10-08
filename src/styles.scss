@@ -11,3 +11,12 @@ $backgroundColor: #333333;
 .message .white-space-initial{
   white-space: initial;
 }
+
+ol {
+  padding: revert !important;
+}
+
+ul {
+  padding: revert !important;
+  list-style: disc !important;
+}
