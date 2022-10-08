@@ -5,7 +5,8 @@ export enum ToolbarItemType {
   Button,
   Select,
   Color,
-  Input
+  Input,
+  Dropdown,
 }
 
 export interface EditorButton extends ToolbarBaseItem {
@@ -37,6 +38,13 @@ export interface EditorSelect extends ToolbarBaseItem {
   title?: string;
 }
 
+export interface EditorDropdown extends ToolbarBaseItem {
+  type: ToolbarItemType.Dropdown;
+  label: string;
+  items: { command: ExecCommand, value: string, label: string }[];
+  title?: string;
+}
+
 export interface Separator extends ToolbarBaseItem {
   type: ToolbarItemType.Separator;
 }
@@ -45,4 +53,4 @@ interface ToolbarBaseItem {
   type: ToolbarItemType;
 }
 
-export type ToolbarItem = EditorInput | EditorColor | EditorSelect | EditorButton | Separator;
+export type ToolbarItem = EditorDropdown | EditorInput | EditorColor | EditorSelect | EditorButton | Separator;

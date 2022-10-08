@@ -2,6 +2,7 @@ import {ExecCommand} from '../models/exec-command';
 import {
   EditorButton,
   EditorColor,
+  EditorDropdown,
   EditorInput,
   EditorSelect,
   Separator,
@@ -57,6 +58,12 @@ export const FORE_COLOR: EditorColor =
   {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette', title: 'font color'};
 export const IMAGE_INPUT: EditorInput =
   {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image', title: 'add image'};
+export const CUSTOM: EditorDropdown = {
+  type: ToolbarItemType.Dropdown, label: 'Custom actions', title: 'test custom', items: [
+    {command: ExecCommand.insertHTML, value: '<b>Custom<b>', label: 'Custom Bold'},
+    {command: ExecCommand.italic, value: null, label: 'Custom Italic'},
+  ]
+};
 
 export const ST_BUTTONS: ToolbarItem[] = [
   UNDO_BUTTON,

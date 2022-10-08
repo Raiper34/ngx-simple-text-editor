@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { DomModifyDirective } from './directives/dom-modify.directive';
 import { SelectionChangeDirective } from './directives/selection-change.directive';
+import { EditorDropdownComponent } from './components/editor-dropdown/editor-dropdown.component';
 
 
 
@@ -22,6 +23,7 @@ import { SelectionChangeDirective } from './directives/selection-change.directiv
     EditorSeparatorComponent,
     DomModifyDirective,
     SelectionChangeDirective,
+    EditorDropdownComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { SelectionChangeDirective } from './directives/selection-change.directiv
     EditorInputComponent,
     EditorSelectComponent,
     EditorSeparatorComponent,
+    EditorDropdownComponent,
   ]
 })
 export class NgxSimpleTextEditorModule { }

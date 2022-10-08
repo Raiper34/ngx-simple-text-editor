@@ -1,0 +1,4 @@
+<select #select [title]="button?.title || ''" (change)="onCommand($event.target); select.value = ''" class="st-select st-toolbar-item">
+  <option value="" disabled selected hidden>{{button?.label}}</option>
+  <option *ngFor="let i of button?.items" [value]="i.label">{{i.label}}</option>
+</select>
