@@ -1,6 +1,6 @@
 <button class="st-button st-toolbar-item" [title]="button?.title || ''" (click)="colorPicker.click()">
   {{rgbStringToHex(state)}}
-  <input #colorPicker class="st-color-picker" type="color" [ngModel]="rgbStringToHex(state)"
+  <input #colorPicker class="st-color-picker" type="color" [ngModel]="rgbStringToHex(state)" tabindex="-1"
          (change)="onCommand(button?.command, $event.target.value)" onmousedown='return false;' onselectstart='return false;'>
   <i [class]="button?.icon" [style.color]="state"></i>
 </button>
