@@ -1,7 +1,10 @@
 @import '../../styles/base';
 
+$labelFontSize: 14px;
+
 .st-input-window {
   display: flex;
+  flex-direction: column;
   background-color: white;
   position: absolute;
   padding: 10px;
@@ -26,4 +29,9 @@
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border: 1px solid $borderColor;
+}
+
+.st-input-label {
+  font-size: $labelFontSize;
+  font-weight: bold;
 }

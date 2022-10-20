@@ -29,6 +29,7 @@ export interface EditorInput extends ToolbarBaseItem {
   icon: string;
   text: string;
   title?: string;
+  label?: string;
 }
 
 export interface EditorSelect extends ToolbarBaseItem {

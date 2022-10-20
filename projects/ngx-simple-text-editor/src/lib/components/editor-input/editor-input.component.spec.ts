@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditorInputComponent } from './editor-input.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
+import {EditorButtonComponent} from '../editor-button/editor-button.component';
 
 describe('EditorInputComponent', () => {
   let component: EditorInputComponent;
@@ -9,7 +10,7 @@ describe('EditorInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorInputComponent ]
+      declarations: [ EditorInputComponent, EditorButtonComponent ]
     })
     .compileComponents();
   }));
@@ -27,11 +28,17 @@ describe('EditorInputComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show toggle input window visibility', () => {
-    component.toggleInputVisibility();
+  it('should show toggle input window visibility', (done) => {
+    component.openInputWindow();
+    fixture.detectChanges();
     expect(component.showInputWindow).toBeTrue();
-    component.toggleInputVisibility();
-    expect(component.showInputWindow).toBeFalse();
+    setTimeout(() => {
+      expect(component.opacity).toBe(1);
+      component.closeInputWindow();
+      expect(component.showInputWindow).toBeFalse();
+      expect(component.opacity).toBe(0);
+      done();
+    });
   });
 
   it('should emit command when value is defined', () => {
@@ -50,8 +57,6 @@ describe('EditorInputComponent', () => {
   });
 
   it('should not emit command when value is undefined', () => {
-    const command = ExecCommand.createLink;
-    const value = 'www.example.com';
     component.value = '';
     component.showInputWindow = true;
     component.command.emit = jasmine.createSpy('emit');
@@ -64,15 +69,34 @@ describe('EditorInputComponent', () => {
     expect(component.command.emit).not.toHaveBeenCalled();
   });
 
-  /*it('should emit command and prompt value', () => {
-    const promptValue = 'www.example.com';
-    const command = ExecCommand.createLink;
+  it('should close window when click outside', (done) => {
+    component.openInputWindow();
+    fixture.detectChanges();
+    setTimeout(() => {
+      component.outsideClick(jasmine.createSpyObj({}, {target: document}));
+      expect(component.showInputWindow).toBeFalse();
+      done();
+    });
+  });
 
-    window.prompt = jasmine.createSpy('prompt').and.returnValue(promptValue);
-    component.command.emit = jasmine.createSpy('emit');
-    component.button = {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'link', text: 'Url'};
+  it('should NOT close window when click inside', (done) => {
+    component.openInputWindow();
+    fixture.detectChanges();
+    setTimeout(() => {
+      component.outsideClick(jasmine.createSpyObj({}, {target: component.inputElement.nativeElement}));
+      expect(component.showInputWindow).toBeTrue();
+      done();
+    });
+  });
 
-    component.onCommand(command);
-    expect(component.command.emit).toHaveBeenCalledWith({command, value: promptValue});
-  });*/
+  it('should calculate proper position based on width', (done) => {
+    component.openInputWindow();
+    fixture.detectChanges();
+    component.windowElement.nativeElement.style.width = '100px';
+    setTimeout(() => {
+      expect(component.margin).toBe(-150);
+      done();
+    });
+  });
+
 });

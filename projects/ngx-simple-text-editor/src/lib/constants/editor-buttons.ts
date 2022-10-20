@@ -52,12 +52,12 @@ export const FONT_SIZE_SELECT: EditorSelect = {
   ]
 };
 export const LINK_INPUT: EditorInput =
-  {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'fas fa-link', text: 'Create link', title: 'create link'};
+  {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'fas fa-link', text: 'Create link', title: 'create link', label: 'Create link'};
 export const UNLINK_BUTTON: EditorButton = {type: ToolbarItemType.Button, command: ExecCommand.unlink, icon: 'fas fa-unlink', title: 'unlink'};
 export const FORE_COLOR: EditorColor =
   {type: ToolbarItemType.Color, command: ExecCommand.foreColor, icon: 'fas fa-palette', title: 'font color'};
 export const IMAGE_INPUT: EditorInput =
-  {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image', title: 'add image'};
+  {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image', title: 'add image', label: 'Create image from link'};
 export const CUSTOM: EditorDropdown = {
   type: ToolbarItemType.Dropdown, label: 'Custom actions', title: 'test custom', items: [
     {command: ExecCommand.insertHTML, value: '<b>Custom<b>', label: 'Custom Bold'},
