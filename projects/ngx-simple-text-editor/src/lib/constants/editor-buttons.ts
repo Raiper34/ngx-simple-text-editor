@@ -59,9 +59,9 @@ export const FORE_COLOR: EditorColor =
 export const IMAGE_INPUT: EditorInput =
   {type: ToolbarItemType.Input, command: ExecCommand.insertImage, icon: 'fas fa-image', text: 'Add image', title: 'add image', label: 'Create image from link'};
 export const CUSTOM: EditorDropdown = {
-  type: ToolbarItemType.Dropdown, label: 'Custom actions', title: 'test custom', items: [
-    {command: ExecCommand.insertHTML, value: '<b>Custom<b>', label: 'Custom Bold'},
-    {command: ExecCommand.italic, value: null, label: 'Custom Italic'},
+  type: ToolbarItemType.Dropdown, label: 'Custom', title: 'test custom', items: [
+    {command: ExecCommand.insertHTML, value: '<b>This is bold<b>', label: 'Custom bold text'},
+    {command: ExecCommand.italic, value: null, label: 'Make Italic'},
   ]
 };
 
