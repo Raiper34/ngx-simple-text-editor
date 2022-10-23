@@ -35,9 +35,7 @@ export class EditorInputComponent {
 
   openInputWindow(): void {
     this.showInputWindow = true;
-    console.log(this.windowElement);
     setTimeout(() => {
-      console.log(this.windowElement);
       this.margin = this.windowElement.nativeElement.getBoundingClientRect().width < APPROX_WIDTH_THRESHOLD ? MARGIN_OFFSET : 0;
       this.opacity = 1;
       this.inputElement.nativeElement.focus();
