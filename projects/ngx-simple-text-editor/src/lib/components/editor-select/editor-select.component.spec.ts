@@ -2,9 +2,17 @@ import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/t
 
 import {EditorSelectComponent} from './editor-select.component';
 import {ExecCommand} from '../../models/exec-command';
-import {ToolbarItemType} from '../../models/button';
+import {EditorSelect, ToolbarItemType} from '../../models/button';
 import {By} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+
+const BUTTON: EditorSelect = {
+  type: ToolbarItemType.Select, command: ExecCommand.fontSize, items: [
+    {value: '1', label: 'Option 1'},
+    {value: '2', label: 'Option 2'},
+    {value: '3', label: 'Option 3'},
+  ]
+};
 
 describe('EditorSelectComponent', () => {
   let component: EditorSelectComponent;
@@ -21,6 +29,7 @@ describe('EditorSelectComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EditorSelectComponent);
     component = fixture.componentInstance;
+    component.button = BUTTON;
     fixture.detectChanges();
   });
 
@@ -36,13 +45,6 @@ describe('EditorSelectComponent', () => {
   });
 
   it('should choose option and emit command', () => {
-    component.button = {
-      type: ToolbarItemType.Select, command: ExecCommand.fontSize, items: [
-        {value: '1', label: 'Option 1'},
-        {value: '2', label: 'Option 2'},
-        {value: '3', label: 'Option 3'},
-      ]
-    };
     component.state = '1';
     component.command.emit = jasmine.createSpy();
     fixture.detectChanges();
@@ -53,5 +55,12 @@ describe('EditorSelectComponent', () => {
     fixture.detectChanges();
 
     expect(component.command.emit).toHaveBeenCalledWith({command: ExecCommand.fontSize, value: '2'});
+  });
+
+  it('should preset first element from items, when state is null', () => {
+    component.ngOnInit();
+    fixture.detectChanges();
+
+    expect(component.state).toBe(component.button.items[0].value);
   });
 });
