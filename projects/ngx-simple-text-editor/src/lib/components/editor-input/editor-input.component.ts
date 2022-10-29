@@ -14,7 +14,7 @@ export class EditorInputComponent {
 
   @Input() button: EditorInput;
   @Input() state: string | number | boolean;
-  @Output() command = new EventEmitter<{command: ExecCommand, value: string}>();
+  @Output() command = new EventEmitter<{ command: ExecCommand, value: string }>();
   @ViewChild('input', {static: false}) inputElement: ElementRef;
   @ViewChild('window', {static: false}) windowElement: ElementRef;
   showInputWindow = false;
@@ -28,7 +28,10 @@ export class EditorInputComponent {
   onCommand(): void {
     if (this.value) {
       this.closeInputWindow();
-      this.command.emit({command: this.button.command, value: this.value});
+      this.command.emit({
+        command: this.button.command,
+        value: this.button.transform ? this.button.transform(this.value) : this.value
+      });
       this.value = '';
     }
   }

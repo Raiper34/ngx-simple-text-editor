@@ -69,6 +69,23 @@ describe('EditorInputComponent', () => {
     expect(component.command.emit).not.toHaveBeenCalled();
   });
 
+  it('should emit command with transformed value when transform method is defined', () => {
+    const command = ExecCommand.createLink;
+    component.value = 'www.example.com';
+    component.command.emit = jasmine.createSpy('emit');
+    component.button = {
+      type: ToolbarItemType.Input,
+      command: ExecCommand.createLink,
+      icon: 'link',
+      text: 'Url',
+      transform: (val: string) => val.replace('www', 'http://www')
+    };
+
+    component.onCommand();
+
+    expect(component.command.emit).toHaveBeenCalledWith({command, value: 'http://www.example.com'});
+  });
+
   it('should close window when click outside', (done) => {
     component.openInputWindow();
     fixture.detectChanges();

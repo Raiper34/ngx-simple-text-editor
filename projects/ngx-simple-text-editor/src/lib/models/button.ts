@@ -30,6 +30,7 @@ export interface EditorInput extends ToolbarBaseItem {
   text: string;
   title?: string;
   label?: string;
+  transform?: (val: string) => string;
 }
 
 export interface EditorSelect extends ToolbarBaseItem {
