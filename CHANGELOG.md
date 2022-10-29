@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [1.4.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/1.3.0...1.4.0)
+
+> 29 October 2022
+
+- feature(input): allow transforming input from input button before insert into editor [`#12`](https://github.com/Raiper34/ngx-simple-text-editor/issues/12)
+- fix(color-picker/select): fix default state of select and color picker [`#13`](https://github.com/Raiper34/ngx-simple-text-editor/issues/13)
+- fix(dropdown): dropdown editor button fixed with based on label length [`190fb34`](https://github.com/Raiper34/ngx-simple-text-editor/commit/190fb34bd61dab266a488f9e15e8febd45758dd1)
+- fix(input): save and load selection to allow add link/whatever to existing text/selection [`1338392`](https://github.com/Raiper34/ngx-simple-text-editor/commit/133839263c404c83667498d9ca6a4c28e1d546a8)
+- fix(input): remove unnecessary console logs [`02c83d6`](https://github.com/Raiper34/ngx-simple-text-editor/commit/02c83d6cc0870de00beebcb696946df48e35c30c)
+
 #### [1.3.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/1.2.0...1.3.0)
 
 > 20 October 2022
