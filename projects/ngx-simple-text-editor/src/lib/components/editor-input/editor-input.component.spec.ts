@@ -116,4 +116,19 @@ describe('EditorInputComponent', () => {
     });
   });
 
+  it('should store selection and restore', (done) => {
+    component.value = 'www.example.com';
+    component.button = {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'link', text: 'Url'};
+
+    component.openInputWindow();
+    expect(component.selectionRange).not.toBeNull();
+
+    fixture.detectChanges();
+    setTimeout(() => {
+      component.onCommand();
+      expect(component.selectionRange).toBeNull();
+      done();
+    });
+  });
+
 });

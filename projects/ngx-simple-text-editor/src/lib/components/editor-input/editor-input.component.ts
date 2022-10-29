@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Output, Input, HostListener, ElementRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Output, Input, HostListener, ElementRef, ViewChild, Inject} from '@angular/core';
 import {EditorInput} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
+import {DOCUMENT} from '@angular/common';
 
 const APPROX_WIDTH_THRESHOLD = 278;
 const MARGIN_OFFSET = -150;
@@ -21,12 +22,17 @@ export class EditorInputComponent {
   value = '';
   margin = 0; // workaround fox window width computing
   opacity = 0; // workaround fox window width computing
+  selectionRange: Range;
 
-  constructor(private readonly element: ElementRef) {
+  constructor(private readonly element: ElementRef,
+              @Inject(DOCUMENT) private readonly document: any) {
   }
 
   onCommand(): void {
     if (this.value) {
+      if (this.selectionRange) {
+        this.loadSelection();
+      }
       this.closeInputWindow();
       this.command.emit({
         command: this.button.command,
@@ -37,6 +43,7 @@ export class EditorInputComponent {
   }
 
   openInputWindow(): void {
+    this.saveSelection();
     this.showInputWindow = true;
     setTimeout(() => {
       this.margin = this.windowElement.nativeElement.getBoundingClientRect().width < APPROX_WIDTH_THRESHOLD ? MARGIN_OFFSET : 0;
@@ -56,6 +63,18 @@ export class EditorInputComponent {
     if (!this.element.nativeElement.contains($event.target) && this.showInputWindow) {
       this.closeInputWindow();
     }
+  }
+
+  private loadSelection(): void {
+    const selection = this.document.defaultView.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(this.selectionRange);
+    this.selectionRange = null;
+  }
+
+  private saveSelection(): void {
+    const selection = this.document.defaultView.getSelection();
+    this.selectionRange = selection.rangeCount === 0 ? null : selection.getRangeAt(0);
   }
 
 }
