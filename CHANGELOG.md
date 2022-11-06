@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+### [2.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/1.4.0...2.0.0)
+
+> 6 November 2022
+
+- Feature/angular 14 upgrade [`#15`](https://github.com/Raiper34/ngx-simple-text-editor/pull/15)
+
 #### [1.4.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/1.3.0...1.4.0)
 
 > 29 October 2022

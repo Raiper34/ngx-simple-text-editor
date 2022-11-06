@@ -10,6 +10,12 @@
 # Ngx Simple Text editor
 Ngx Simple Text editor or ST editor is a simple native text editor component for Angular 9+. 
 
+## Version compatibility
+| Angular version | Ngx simple text editor version |
+|-----------------|--------------------------------|
+| 9 - 13          | 0.0.0 - 1.x.x                  |
+| 14              | 2.x.x                          |
+
 # Instalation
 
 `npm install ngx-simple-text-editor --save`
