@@ -1,14 +1,14 @@
 {
   "name": "ngx-simple-text-editor",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Ngx Simple Text editor or ST editor is a simple native text editor component for Angular 9+.",
   "repository": "https://github.com/Raiper34/ngx-simple-text-editor",
   "homepage": "https://ngx-simple-text-editor.netlify.app",
   "keywords": ["angular", "text", "editor", "text editor", "angular text editor", "wysiwyg", "wysiwyg editor"],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">=9.0.0",
-    "@angular/core": ">=9.0.0",
+    "@angular/common": ">=15.0.0",
+    "@angular/core": ">=15.0.0",
     "@fortawesome/fontawesome-free": "^6.2.1"
   },
   "dependencies": {

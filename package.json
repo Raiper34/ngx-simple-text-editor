@@ -89,6 +89,6 @@
     "ignoreCommitPattern": "(test\\()|(release\\()|(chore\\()",
     "commitLimit": 30,
     "hideCredit": true,
-    "startingVersion": "1.2.0"
+    "startingVersion": "2.0.0"
   }
 }
