@@ -11,10 +11,10 @@
 Ngx Simple Text editor or ST editor is a simple native text editor component for Angular 9+. 
 
 ## Version compatibility
-| Angular version | Ngx simple text editor version |
-|-----------------|--------------------------------|
-| 9 - 13          | 0.0.0 - 1.x.x                  |
-| 14              | 2.x.x                          |
+| Angular version | Ngx simple text editor version | Font awesome version |
+|-----------------|--------------------------------|----------------------|
+| 9 - 13          | 0.0.0 - 1.x.x                  | 5.0.0-6.x.x          |
+| 14              | 2.x.x                          | 5.0.0-6.x.x          |
 
 # Instalation
 
@@ -34,8 +34,8 @@ import {NgxSimpleTextEditorModule} from 'ngx-simple-text-editor';
 // ...
 })
 ```
-If you want to use default button icons, you must install Font awesome v5. 
-`npm install @fortawesome/fontawesome-free@5` and declare in styles in angular.json
+If you want to use default button icons, you must install Font awesome. 
+`npm install @fortawesome/fontawesome-free` and declare in styles in angular.json
 ```json
 ...
 "styles": [
