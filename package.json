@@ -16,7 +16,7 @@
     "lint:lib:fix": "npm run lint:lib -- --fix",
     "e2e": "ng e2e",
     "changelog": "auto-changelog",
-    "deploy": "npm run build && netlify deploy --dir=dist/ngx-simple-text-editor-app --configuration production",
+    "deploy": "npm run build && netlify deploy --dir=dist/ngx-simple-text-editor-app --prod",
     "publish": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish"
   },
   "private": true,
