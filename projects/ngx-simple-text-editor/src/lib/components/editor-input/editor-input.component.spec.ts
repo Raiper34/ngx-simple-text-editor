@@ -120,9 +120,9 @@ describe('EditorInputComponent', () => {
     component.value = 'www.example.com';
     component.button = {type: ToolbarItemType.Input, command: ExecCommand.createLink, icon: 'link', text: 'Url'};
 
-    component.openInputWindow();
     expect(component.selectionRange).not.toBeNull();
 
+    component.openInputWindow();
     fixture.detectChanges();
     setTimeout(() => {
       component.onCommand();
