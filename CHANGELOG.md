@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+<!-- auto-changelog-above -->
+
+### [4.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/3.0.0...4.0.0)
+
+> 27 August 2023
+
+- feature(upgrade): upgrade angular 15 to 16 [`864bdae`](https://github.com/Raiper34/ngx-simple-text-editor/commit/864bdae6dd85fe7b181d5d612d390270ed3d227e)
+
 ### [3.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/2.0.0...3.0.0)
 
 > 10 January 2023
@@ -21,8 +29,6 @@ All notable changes to this project will be documented in this file. Dates are d
 - feature(upgrade): upgrade angular 12 -&gt; 13 [`d237462`](https://github.com/Raiper34/ngx-simple-text-editor/commit/d2374620264c3b722d9622b3536e1ae7dba39739)
 - feature(upgrade): upgrade angular 10 -&gt; 11 [`900ee2e`](https://github.com/Raiper34/ngx-simple-text-editor/commit/900ee2ed1a71fee4bb62adcf7a6f36ae07af362f)
 - feature(upgrade): upgrade angular 13 -&gt; 14 [`5744ea5`](https://github.com/Raiper34/ngx-simple-text-editor/commit/5744ea5ca96b135a8dd57580a72702d08c671e38)
-
-<!-- auto-changelog-above -->
 
 #### 1.1.0
 
