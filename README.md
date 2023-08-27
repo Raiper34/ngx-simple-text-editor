@@ -16,6 +16,7 @@ Ngx Simple Text editor or ST editor is a simple native text editor component for
 | 9 - 13          | 0.0.0 - 1.x.x                  | 5.0.0-6.x.x          |
 | 14              | 2.x.x                          | 5.0.0-6.x.x          |
 | 15              | 3.x.x                          | 5.0.0-6.x.x          |
+| 16              | 4.x.x                          | 5.0.0-6.x.x          |
 
 # Instalation
 
