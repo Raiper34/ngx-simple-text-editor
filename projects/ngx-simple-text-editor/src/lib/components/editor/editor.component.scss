@@ -27,6 +27,7 @@
   &:empty:not(:focus):before{
     content: attr(data-placeholder);
     color: $borderColor;
+    pointer-events: none;
   }
 }
 
