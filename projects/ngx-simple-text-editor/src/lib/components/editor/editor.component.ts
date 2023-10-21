@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {ST_BUTTONS} from '../../constants/editor-buttons';
@@ -20,7 +20,7 @@ const DEFAULT_CONFIG: EditorConfig = {
     CommandService
   ]
 })
-export class EditorComponent implements ControlValueAccessor {
+export class EditorComponent implements AfterViewInit, ControlValueAccessor {
 
   @Input() set config(val: EditorConfig) {
     this._config = {...DEFAULT_CONFIG, ...val};
@@ -40,11 +40,13 @@ export class EditorComponent implements ControlValueAccessor {
   constructor(@Inject(DOCUMENT) private readonly document: any,
               private readonly commandService: CommandService) { }
 
+  ngAfterViewInit(): void {
+    this.updateContentEditable();
+  }
+
   writeValue(val: string): void {
     this.content = val;
-    if (this.contentEditable) {
-      this.contentEditable.nativeElement.innerHTML = val;
-    }
+    this.updateContentEditable();
   }
 
   registerOnChange(fn: (val: string) => void): void {
@@ -77,6 +79,12 @@ export class EditorComponent implements ControlValueAccessor {
 
   trackBy(_, item: any): string {
     return item.name;
+  }
+
+  private updateContentEditable(): void {
+    if (this.contentEditable) {
+      this.contentEditable.nativeElement.innerHTML = this.content;
+    }
   }
 
 }
