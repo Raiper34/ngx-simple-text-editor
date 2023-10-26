@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [4.0.3](https://github.com/Raiper34/ngx-simple-text-editor/compare/4.0.2...4.0.3)
+
+> 21 October 2023
+
+- fix(editor): editor initial value in reactive forms [`#18`](https://github.com/Raiper34/ngx-simple-text-editor/issues/18)
+
 #### [4.0.2](https://github.com/Raiper34/ngx-simple-text-editor/compare/4.0.1...4.0.2)
 
 > 9 October 2023
