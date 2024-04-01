@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: cimg/node:16.20.2-browsers
+      - image: cimg/node:18.13.0-browsers
     steps:
       - checkout
       - restore_cache:
