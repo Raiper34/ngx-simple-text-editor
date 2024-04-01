@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+### [5.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/4.0.3...5.0.0)
+
+> 1 April 2024
+
+- feature(upgrade): upgrade angular to v17 [`5b771dc`](https://github.com/Raiper34/ngx-simple-text-editor/commit/5b771dccf6f6f32fca4ee10b06d4f771b7022e65)
+- feature(upgrade): upgrade node v to v18.13.0, typescript to v5.2.2 and zone.js to 0.14.4 [`e8c356b`](https://github.com/Raiper34/ngx-simple-text-editor/commit/e8c356bf71ac41d7eb83edd10a8d18780d9f281f)
+
 #### [4.0.3](https://github.com/Raiper34/ngx-simple-text-editor/compare/4.0.2...4.0.3)
 
 > 21 October 2023
