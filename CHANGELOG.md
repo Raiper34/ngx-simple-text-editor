@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [2.0.1](https://github.com/Raiper34/ngx-simple-text-editor/compare/2.0.0...2.0.1)
+
+> 15 June 2024
+- fix(editor): editor placeholder cursor and click bug fix [`#17`](https://github.com/Raiper34/ngx-simple-text-editor/issues/17)
+- fix(editor): editor initial value in reactive forms [`#18`](https://github.com/Raiper34/ngx-simple-text-editor/issues/18)
+
 ### [2.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/1.4.0...2.0.0)
 
 > 6 November 2022
