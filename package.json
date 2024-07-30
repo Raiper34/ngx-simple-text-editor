@@ -83,6 +83,10 @@
     {
       "from": "logo.svg",
       "to": "dist/ngx-simple-text-editor/logo.svg"
+    },
+    {
+      "from": "demo.gif",
+      "to": "dist/ngx-simple-text-editor/demo.gif"
     }
   ],
   "auto-changelog": {
