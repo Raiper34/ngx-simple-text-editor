@@ -21,6 +21,7 @@ The key features of this editor are simplicity, cross-browser compatibility, and
 - [🔗 Compatibility](#-compatibility)
 - [🚀 Instalation](#-instalation)
 - [💻 Usage](#-usage)
+  - [Custom buttons](#custom-buttons)
 - [✨ Demo](#-demo)
 - [📖 License](#-license)
 
@@ -34,7 +35,7 @@ The key features of this editor are simplicity, cross-browser compatibility, and
 | 16              | 4.x.x                          | 5.0.0-6.x.x          |
 | 17              | 5.x.x                          | 5.0.0-6.x.x          |
 
-# 🚀 Instalation
+## 🚀 Instalation
 
 `npm install ngx-simple-text-editor --save`
 
@@ -63,7 +64,7 @@ If you want to use default button icons, you must install Font awesome.
 ...
 ```
 
-# 💻 Usage
+## 💻 Usage
 You can use Ngx simple text editor as classic template-driven form input or as reactive form input.
 ```angular2html
 <st-editor [(ngModel)]="content" [config]="config"></st-editor>
@@ -97,7 +98,7 @@ config: EditorConfig = {
 ...
 ```
 
-## Custom buttons
+### Custom buttons
 Defining custom buttons is really simple, you just need to create a new constant and pass it into the `buttons` property of the editor config.
 The constant needs to consist of at least `type`, which is basically a type of button that will be rendered on the UI and `command`, which is an action, that will be performed.
 You can use a predefined ExecCommand enum for command definition.
@@ -164,9 +165,9 @@ export const FONT_SIZE_SELECT: EditorSelect = {
 };
 ```
 
-# ✨ Demo
+## ✨ Demo
 [Online demo](https://ngx-simple-text-editor.netlify.app/)
 or Stackblitz coming soon.
 
-# 📖 License
+## 📖 License
 MIT
