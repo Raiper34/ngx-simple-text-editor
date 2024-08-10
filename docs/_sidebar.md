@@ -4,6 +4,8 @@
   - [Usage](usage.md)
 - Customization
   - [Custom button](custom-buttons.md)
-- [Demo](demo.md)
+- Demo
+  - [Live](live.md)
+  - [Playground](playground.md)
 - [Changelog](CHANGELOG.md)
 - [License](LICENSE.md)
