@@ -1,132 +1,13 @@
-<!-- Header -->
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">
-        Ngx Simple Text Editor
-      </p>
-      <div class="subtitle">
-        Ngx Simple Text editor or ST editor is a simple native text editor component for Angular 9+.
-      </div>
-      <div class="tile">
-        <div class="container">
-          <a href="https://badge.fury.io/js/ngx-simple-text-editor"><img src="https://badge.fury.io/js/ngx-simple-text-editor.svg" alt="npm version"></a>
-          <a href="https://circleci.com/gh/Raiper34/ngx-simple-text-editor"><img src="https://circleci.com/gh/Raiper34/ngx-simple-text-editor.svg?style=shield" alt="CircleCI"></a>
-          <a href='https://coveralls.io/github/Raiper34/ngx-simple-text-editor?branch=main'><img src='https://coveralls.io/repos/github/Raiper34/ngx-simple-text-editor/badge.svg?branch=main' alt='Coverage Status'></a>
-          <a href="https://github.com/Raiper34/ngx-simple-text-editor/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Raiper34/ngx-simple-text-editor"></a>
-          <a href="https://img.shields.io/bundlephobia/min/ngx-simple-text-editor"><img src="https://img.shields.io/bundlephobia/min/ngx-simple-text-editor" alt="npm bundle size"></a>
-          <a href="https://img.shields.io/npm/l/ngx-simple-text-editor"><img src="https://img.shields.io/npm/l/ngx-simple-text-editor" alt="NPM"></a>
-          <a href="https://ngx-simple-text-editor.netlify.app/"><img src="https://badgen.net/badge/demo/online/orange" alt="demo"></a>
-        </div>
-      </div>
-      <div>
-        <img src="assets/logo.svg" alt="ngx simple text editor">
-      </div>
-    </div>
+<st-editor [(ngModel)]="content" [config]="config"></st-editor>
+<br>
+<article class="message">
+  <div class="message-header">
+    <p>Output</p>
   </div>
-</section>
-
-<!-- Example -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="subtitle">
-        Example
-      </div>
-      <div>
-        <st-editor [(ngModel)]="content" [config]="config"></st-editor>
-        <br>
-        <article class="message">
-          <div class="message-header">
-            <p>Output</p>
-          </div>
-          <div class="message-body code-background">
+  <div class="message-body code-background">
             <pre class="code-background white-space-initial">
               <code *ngIf="content" [highlight]="content"></code> <!-- Workaround for highlight directive -->
               <code *ngIf="!content"></code> <!-- Workaround for highlight directive -->
             </pre>
-          </div>
-        </article>
-      </div>
-    </div>
   </div>
-</section>
-
-<!-- Installation -->
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <div class="subtitle">
-        Installation
-      </div>
-      <div>
-        Install library using
-        <div class="tag is-dark">npm install ngx-simple-text-editor --save</div>
-        and then add
-        <div class="tag is-dark">NgxSimpleTextEditorModule</div>
-        into module imports.
-        <article class="message">
-          <div class="message-header"><p>app.module.ts</p></div>
-          <div class="message-body code-background">
-            <pre class="code-background"><code [highlight]="installationCode1"></code></pre>
-          </div>
-        </article>
-        If you want to use default button icons, you must install Font awesome.
-        <div class="tag is-dark">npm install &#64;fortawesome/fontawesome-free</div>
-        and declare in styles in angular.json.
-        <article class="message">
-          <div class="message-header"><p>angular.json</p></div>
-          <div class="message-body code-background">
-            <pre class="code-background"><code [highlight]="installationCode2"></code></pre>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Usage -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="subtitle">
-        Usage
-      </div>
-      <div>
-        You can use Ngx simple text editor as classic template-driven form input or as reactive form input.
-        <article class="message">
-          <div class="message-header"><p>app.component.html</p></div>
-          <div class="message-body code-background">
-            <pre class="code-background"><code [highlight]="usageCode1"></code></pre>
-          </div>
-        </article>
-        The editor has got only one &#64;Input with config object, which is optional. The config object is defined by
-        placeholder and buttons, both are optional and can be omitted.
-        <article class="message">
-          <div class="message-header"><p>app.component.ts</p></div>
-          <div class="message-body code-background">
-            <pre class="code-background"><code [highlight]="usageCode2"></code></pre>
-          </div>
-        </article>
-        You can pass all predefined buttons with predefined order, or you can use only buttons you want with order as
-        you want.
-        <article class="message">
-          <div class="message-header"><p>app.component.ts</p></div>
-          <div class="message-body code-background">
-            <pre class="code-background"><code [highlight]="usageCode3"></code></pre>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Ngx simple text editor</strong> by <a href="https://gulan.eu">Filip Raiper34 Gulan</a>. The source code is
-      licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
+</article>

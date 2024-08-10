@@ -1,0 +1,16 @@
+{
+  "copyFiles": [
+    {
+      "from": "../../README.md",
+      "to": "../../dist/ngx-simple-text-editor/README.md"
+    },
+    {
+      "from": "../../CHANGELOG.md",
+      "to": "../../dist/ngx-simple-text-editor/CHANGELOG.md"
+    },
+    {
+      "from": "../../assets",
+      "to": "../../dist/ngx-simple-text-editor"
+    }
+  ]
+}

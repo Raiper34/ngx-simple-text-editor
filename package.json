@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng build ngx-simple-text-editor --configuration production && copy-files-from-to",
+    "docs": "docsify serve ./docs",
+    "build:lib": "ng build ngx-simple-text-editor --configuration production && copy-files-from-to --config projects/ngx-simple-text-editor/copy-files-from-to.json",
+    "build:docs": "copy-files-from-to --config docs/copy-files-from-to.json",
     "test": "ng test",
     "test:lib": "ng test ngx-simple-text-editor --code-coverage",
     "test:lib:coveralls": "npm run test:lib && cat ./coverage/ngx-simple-text-editor/lcov.info | coveralls",
@@ -16,8 +18,8 @@
     "lint:lib:fix": "npm run lint:lib -- --fix",
     "e2e": "ng e2e",
     "changelog": "auto-changelog",
-    "deploy": "npm run build && netlify deploy --dir=dist/ngx-simple-text-editor-app --prod",
-    "publish": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish"
+    "deploy": "npm run build -- --base-href /demo/ && npm run build:docs && netlify deploy --dir=dist/docs --prod",
+    "release": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +57,7 @@
     "codelyzer": "^6.0.0",
     "copy-files-from-to": "^3.2.2",
     "coveralls": "^3.1.1",
+    "docsify-cli": "^4.4.4",
     "eslint": "^8.23.1",
     "jasmine-core": "~3.99.1",
     "jasmine-spec-reporter": "~5.0.0",
@@ -71,24 +74,6 @@
     "tslint": "~6.1.0",
     "typescript": "~5.4.3"
   },
-  "copyFiles": [
-    {
-      "from": "README.md",
-      "to": "dist/ngx-simple-text-editor/README.md"
-    },
-    {
-      "from": "CHANGELOG.md",
-      "to": "dist/ngx-simple-text-editor/CHANGELOG.md"
-    },
-    {
-      "from": "logo.svg",
-      "to": "dist/ngx-simple-text-editor/logo.svg"
-    },
-    {
-      "from": "demo.gif",
-      "to": "dist/ngx-simple-text-editor/demo.gif"
-    }
-  ],
   "auto-changelog": {
     "ignoreCommitPattern": "(test\\()|(release\\()|(chore\\()",
     "commitLimit": 30,

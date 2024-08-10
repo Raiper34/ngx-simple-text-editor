@@ -1,0 +1,9 @@
+- Getting started
+  - [Compatibility](compatibility.md)
+  - [Instalation](instalation.md)
+  - [Usage](usage.md)
+- Customization
+  - [Custom button](custom-buttons.md)
+- [Demo](demo.md)
+- [Changelog](CHANGELOG.md)
+- [License](LICENSE.md)
