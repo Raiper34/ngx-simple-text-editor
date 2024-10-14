@@ -4,6 +4,7 @@
   - [Usage](usage.md)
 - Customization
   - [Custom button](custom-buttons.md)
+  - [Localization](localization.md)
 - Demo
   - [Live](live.md)
   - [Playground](playground.md)
