@@ -19,7 +19,8 @@
     "e2e": "ng e2e",
     "changelog": "auto-changelog",
     "deploy": "npm run build -- --base-href /demo/ && npm run build:docs && netlify deploy --dir=dist/docs --prod",
-    "release": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish"
+    "release": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish",
+    "commit": "cz"
   },
   "private": true,
   "dependencies": {
@@ -55,8 +56,10 @@
     "@typescript-eslint/parser": "5.37.0",
     "auto-changelog": "^2.4.0",
     "codelyzer": "^6.0.0",
+    "commitizen": "^4.3.1",
     "copy-files-from-to": "^3.2.2",
     "coveralls": "^3.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "docsify-cli": "^4.4.4",
     "eslint": "^8.23.1",
     "jasmine-core": "~3.99.1",
@@ -79,5 +82,10 @@
     "commitLimit": 30,
     "hideCredit": true,
     "startingVersion": "2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
