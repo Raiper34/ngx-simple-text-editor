@@ -3,7 +3,8 @@
   - [Instalation](instalation.md)
   - [Usage](usage.md)
 - Customization
-  - [Custom button](custom-buttons.md)
+  - [Custom buttons](custom-buttons.md)
+  - [Custom style](custom-style.md)
   - [Localization](localization.md)
 - Demo
   - [Live](live.md)
