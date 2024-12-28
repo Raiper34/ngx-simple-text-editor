@@ -1,10 +1,12 @@
 [![npm version](https://badge.fury.io/js/ngx-simple-text-editor.svg)](https://badge.fury.io/js/ngx-simple-text-editor)
-[![demo](https://badgen.net/badge/demo/online/orange)](https://ngx-simple-text-editor.netlify.app/)
+[![docs](https://badgen.net/badge/docs/online/orange)](https://ngx-simple-text-editor.netlify.app)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-simple-text-editor)
 ![NPM](https://img.shields.io/npm/l/ngx-simple-text-editor)
 [![CircleCI](https://circleci.com/gh/Raiper34/ngx-simple-text-editor.svg?style=shield)](https://circleci.com/gh/Raiper34/ngx-simple-text-editor)
 [![Coverage Status](https://coveralls.io/repos/github/Raiper34/ngx-simple-text-editor/badge.svg?branch=main)](https://coveralls.io/github/Raiper34/ngx-simple-text-editor?branch=main)
 [![npm](https://img.shields.io/npm/dt/ngx-simple-text-editor)](https://badge.fury.io/js/ngx-simple-text-editor)
+[![npm](https://img.shields.io/npm/dm/ngx-simple-text-editor)](https://badge.fury.io/js/ngx-simple-text-editor)
+[![npm](https://img.shields.io/npm/dw/ngx-simple-text-editor)](https://badge.fury.io/js/ngx-simple-text-editor)
 [![](https://data.jsdelivr.com/v1/package/npm/ngx-simple-text-editor/badge?style=rounded)](https://www.jsdelivr.com/package/npm/ngx-simple-text-editor)
 [![GitHub Repo stars](https://img.shields.io/github/stars/raiper34/ngx-simple-text-editor)](https://github.com/Raiper34/ngx-simple-text-editor)
 
@@ -32,7 +34,7 @@ The key features of this editor are simplicity, cross-browser compatibility, and
 | 14              | 2.x.x                          | 5.0.0-6.x.x          |
 | 15              | 3.x.x                          | 5.0.0-6.x.x          |
 | 16              | 4.x.x                          | 5.0.0-6.x.x          |
-| 17              | 5.x.x                          | 5.0.0-6.x.x          |
+| 17 - 19         | 5.x.x                          | 5.0.0-6.x.x          |
 
 ## 🚀 Instalation
 
