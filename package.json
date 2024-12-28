@@ -17,9 +17,9 @@
     "lint:lib": "tslint --project projects/ngx-simple-text-editor/tsconfig.lib.json",
     "lint:lib:fix": "npm run lint:lib -- --fix",
     "e2e": "ng e2e",
-    "changelog": "auto-changelog",
+    "changelog": "cd projects/ngx-simple-text-editor && auto-changelog -p -o ../../CHANGELOG.md -c ../../.auto-changelog",
     "deploy": "npm run build -- --base-href /demo/ && npm run build:docs && netlify deploy --dir=dist/docs --prod",
-    "release": "npm run build:lib && cd dist/ngx-simple-text-editor && npm publish",
+    "release": "release-it",
     "commit": "cz"
   },
   "private": true,
@@ -49,6 +49,7 @@
     "@angular-eslint/template-parser": "^17.3.0",
     "@angular/cli": "^17.3.2",
     "@angular/compiler-cli": "^17.3.2",
+    "@release-it/bumper": "^6.0.1",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -73,19 +74,9 @@
     "ng-packagr": "^17.3.0",
     "protractor": "~7.0.0",
     "puppeteer": "^14.4.1",
+    "release-it": "^17.11.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~5.4.3"
-  },
-  "auto-changelog": {
-    "ignoreCommitPattern": "(test\\()|(release\\()|(chore\\()",
-    "commitLimit": 30,
-    "hideCredit": true,
-    "startingVersion": "2.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
