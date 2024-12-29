@@ -8,6 +8,7 @@
     "release": true
   },
   "npm": {
+    "publish": true,
     "publishPath": "./dist/ngx-simple-text-editor"
   },
   "plugins": {
@@ -18,6 +19,7 @@
   },
   "hooks": {
     "before:init": ["npm run lint:lib", "npm run test:lib"],
-    "after:bump": ["npm run changelog", "npm run build:lib"]
+    "after:bump": ["npm run changelog", "npm run build:lib"],
+    "after:release": ["npm run deploy"]
   }
 }
