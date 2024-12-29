@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [5.0.1](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.0...5.0.1)
+
+- docs(website): new documentation website [`7e21d15`](https://github.com/Raiper34/ngx-simple-text-editor/commit/7e21d15ee518ee793274a1dfa687b44dac5d5619)
+- docs(site): add localization page to document site [`ae388aa`](https://github.com/Raiper34/ngx-simple-text-editor/commit/ae388aacf98b2b1734f1c8459fc26c39ea3d1d4f)
+- docs(readme): improve readme.md and add custom buttons paragraph [`22d232d`](https://github.com/Raiper34/ngx-simple-text-editor/commit/22d232dbd5439460e609566826af601055480ef9)
+- docs(site): add custom style page to documentation site [`41ee3e5`](https://github.com/Raiper34/ngx-simple-text-editor/commit/41ee3e5405cd311c280e1d5345f0419fae88da21)
+- docs(website): added stackblitz playground [`8c346a1`](https://github.com/Raiper34/ngx-simple-text-editor/commit/8c346a1f1cadbf944a36feeef34cc9302305ee0f)
+- docs(readme): improve content menu in readme.md [`7f7854f`](https://github.com/Raiper34/ngx-simple-text-editor/commit/7f7854f815db546453f1f00c0000d8b477dbc1f3)
+- docs(readme): update compatibility table and unify badges [`083715e`](https://github.com/Raiper34/ngx-simple-text-editor/commit/083715e48e499b078aeba869636980a278a3ab84)
+- fix(website): fix live demo iframe link [`9bbc477`](https://github.com/Raiper34/ngx-simple-text-editor/commit/9bbc4771e58a93b3a38e7c89594e89043ff82d8d)
+- docs(website): added npm link to cover page [`bb9257d`](https://github.com/Raiper34/ngx-simple-text-editor/commit/bb9257d9230c407aa817172cb83e529f6aa3f6de)
+
 ### [5.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/4.0.3...5.0.0)
 
 > 1 April 2024
