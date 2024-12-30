@@ -1,4 +1,4 @@
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {EditorSelectComponent} from './editor-select.component';
 import {ExecCommand} from '../../models/exec-command';

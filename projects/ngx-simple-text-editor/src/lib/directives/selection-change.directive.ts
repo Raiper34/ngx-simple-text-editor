@@ -8,7 +8,7 @@ export class SelectionChangeDirective {
 
   @Output('stSelectionChange') selectionChange = new EventEmitter<void>();
 
-  constructor(@Inject(DOCUMENT) private readonly document: any,
+  constructor(@Inject(DOCUMENT) private readonly document: Document,
               private readonly element: ElementRef) { }
 
   @HostListener('document:selectionchange')

@@ -38,7 +38,7 @@ describe('CommandService', () => {
   });
 
   it('should exec command with value', () => {
-    service.execCommand(ExecCommand.fontSize, 3);
+    service.execCommand(ExecCommand.fontSize, '3');
     expect(document.execCommand).toHaveBeenCalledWith(String(ExecCommand.fontSize), false, String(3));
   });
 

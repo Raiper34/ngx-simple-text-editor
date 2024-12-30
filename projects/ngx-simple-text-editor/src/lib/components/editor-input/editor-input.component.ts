@@ -25,7 +25,7 @@ export class EditorInputComponent {
   selectionRange: Range;
 
   constructor(private readonly element: ElementRef,
-              @Inject(DOCUMENT) private readonly document: any) {
+              @Inject(DOCUMENT) private readonly document: Document) {
   }
 
   onCommand(): void {

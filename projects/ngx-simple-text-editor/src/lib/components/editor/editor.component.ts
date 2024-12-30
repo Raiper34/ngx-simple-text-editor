@@ -1,8 +1,7 @@
-import {AfterViewInit, Component, ElementRef, Inject, Input, ViewChild} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {ST_BUTTONS} from '../../constants/editor-buttons';
-import {ToolbarItemType} from '../../models/button';
+import {ToolbarItem, ToolbarItemType} from '../../models/button';
 import {CommandService} from '../../services/command.service';
 import {EditorConfig} from '../../models/config';
 
@@ -37,8 +36,7 @@ export class EditorComponent implements AfterViewInit, ControlValueAccessor {
   onTouchedFn: () => void;
   queryCommandState: {[key: string]: string | number | boolean} = {};
 
-  constructor(@Inject(DOCUMENT) private readonly document: any,
-              private readonly commandService: CommandService) { }
+  constructor(private readonly commandService: CommandService) { }
 
   ngAfterViewInit(): void {
     this.updateContentEditable();
@@ -67,7 +65,7 @@ export class EditorComponent implements AfterViewInit, ControlValueAccessor {
     }
   }
 
-  execCommand(command: string, value?: any): void {
+  execCommand(command: string, value?: string): void {
     this.contentEditable.nativeElement.focus();
     this.commandService.execCommand(command, value);
     this.fetchQueryCommandState();
@@ -77,8 +75,8 @@ export class EditorComponent implements AfterViewInit, ControlValueAccessor {
     this.queryCommandState = this.commandService.getQueryCommandState(this.config.buttons);
   }
 
-  trackBy(_, item: any): string {
-    return item.name;
+  trackBy(_, item: ToolbarItem): ToolbarItemType {
+    return item.type;
   }
 
   private updateContentEditable(): void {

@@ -2,9 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {
   EditorButton,
   EditorColor,
-  EditorInput,
   EditorSelect,
-  Separator,
   ToolbarItem,
   ToolbarItemType
 } from '../models/button';
@@ -13,7 +11,7 @@ import {DOCUMENT} from '@angular/common';
 @Injectable()
 export class CommandService {
 
-  constructor(@Inject(DOCUMENT) private readonly document: any) { }
+  constructor(@Inject(DOCUMENT) private readonly document: Document) { }
 
   private isCommandWithValue(item: ToolbarItem): item is (EditorSelect | EditorColor) {
     return item.type === ToolbarItemType.Select || item.type === ToolbarItemType.Color;
@@ -34,7 +32,7 @@ export class CommandService {
       }), {});
   }
 
-  execCommand(command: string, value?: any): void {
+  execCommand(command: string, value?: string): void {
     this.document.execCommand(command, false, value ? String(value) : value);
   }
 }
