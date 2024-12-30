@@ -20,7 +20,8 @@
     "changelog": "cd projects/ngx-simple-text-editor && auto-changelog -p -o ../../CHANGELOG.md -c ../../.auto-changelog",
     "deploy": "npm run build -- --base-href /demo/ && npm run build:docs && netlify deploy --dir=dist/docs --prod",
     "release": "release-it",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -63,6 +64,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "docsify-cli": "^4.4.4",
     "eslint": "^8.23.1",
+    "husky": "^9.1.7",
     "jasmine-core": "~3.99.1",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.4.1",
