@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-text-editor",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Ngx Simple Text editor or ST editor is a simple native text editor component for Angular 9+.",
   "repository": "https://github.com/Raiper34/ngx-simple-text-editor",
   "homepage": "https://ngx-simple-text-editor.netlify.app",
