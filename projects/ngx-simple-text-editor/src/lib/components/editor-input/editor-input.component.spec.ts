@@ -3,6 +3,7 @@ import { EditorInputComponent } from './editor-input.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
 import {EditorButtonComponent} from '../editor-button/editor-button.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('EditorInputComponent', () => {
   let component: EditorInputComponent;
@@ -10,7 +11,8 @@ describe('EditorInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorInputComponent, EditorButtonComponent ]
+      declarations: [ EditorInputComponent, EditorButtonComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));

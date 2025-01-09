@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditorSeparatorComponent } from './editor-separator.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('EditorSeparatorComponent', () => {
   let component: EditorSeparatorComponent;
@@ -8,7 +9,8 @@ describe('EditorSeparatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorSeparatorComponent ]
+      declarations: [ EditorSeparatorComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));

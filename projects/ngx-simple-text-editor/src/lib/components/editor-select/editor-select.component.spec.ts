@@ -5,6 +5,7 @@ import {ExecCommand} from '../../models/exec-command';
 import {EditorSelect, ToolbarItemType} from '../../models/button';
 import {By} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 const BUTTON: EditorSelect = {
   type: ToolbarItemType.Select, command: ExecCommand.fontSize, items: [
@@ -21,7 +22,8 @@ describe('EditorSelectComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EditorSelectComponent],
-      imports: [FormsModule]
+      imports: [FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

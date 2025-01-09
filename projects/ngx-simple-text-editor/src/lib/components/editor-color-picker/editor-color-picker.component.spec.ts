@@ -4,6 +4,7 @@ import { EditorColorPickerComponent } from './editor-color-picker.component';
 import {ExecCommand} from '../../models/exec-command';
 import {ToolbarItemType} from '../../models/button';
 import {By} from '@angular/platform-browser';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('EditorColorPickerComponent', () => {
   let component: EditorColorPickerComponent;
@@ -11,7 +12,8 @@ describe('EditorColorPickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorColorPickerComponent ]
+      declarations: [ EditorColorPickerComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));

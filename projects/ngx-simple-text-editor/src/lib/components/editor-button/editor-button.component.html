@@ -1,6 +1,6 @@
 <button class="st-button st-toolbar-item"
         [title]="button?.title || ''"
-        (click)="onCommand(button?.command)"
+        (stAction)="onCommand(button?.command)"
         [class.active]="state">
   <i [class]="button?.icon"></i>
 </button>

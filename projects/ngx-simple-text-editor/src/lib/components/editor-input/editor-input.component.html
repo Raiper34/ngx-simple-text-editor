@@ -3,6 +3,6 @@
   <label *ngIf="button?.label" class="st-input-label" [for]="button?.label">{{button?.label}}</label>
   <div>
     <input #input class="st-input-input" type="text" [id]="button?.label" [title]="button?.label" [(ngModel)]="value">
-    <button class="st-input-button" (click)="onCommand()">Confirm</button>
+    <button class="st-input-button" (stAction)="onCommand()">Confirm</button>
   </div>
 </div>

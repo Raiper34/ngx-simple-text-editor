@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
 import { DomModifyDirective } from './directives/dom-modify.directive';
 import { SelectionChangeDirective } from './directives/selection-change.directive';
 import { EditorDropdownComponent } from './components/editor-dropdown/editor-dropdown.component';
+import {ActionDirective} from "./directives/action.directive";
 
 
 
@@ -24,6 +25,7 @@ import { EditorDropdownComponent } from './components/editor-dropdown/editor-dro
     DomModifyDirective,
     SelectionChangeDirective,
     EditorDropdownComponent,
+    ActionDirective,
   ],
   imports: [
     CommonModule,

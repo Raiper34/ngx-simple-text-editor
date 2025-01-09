@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {EditorDropdown, ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
 import {By} from '@angular/platform-browser';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 const BUTTON: EditorDropdown = {
   type: ToolbarItemType.Dropdown, label: 'Dropdown', items: [
@@ -20,7 +21,8 @@ describe('EditorDropdownComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditorDropdownComponent ],
-      imports: [FormsModule]
+      imports: [FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));

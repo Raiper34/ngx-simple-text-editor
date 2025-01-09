@@ -3,6 +3,8 @@ import { EditorButtonComponent } from './editor-button.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
 import {By} from '@angular/platform-browser';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {ActionDirective} from '../../directives/action.directive';
 
 describe('WysiwygEditorButtonComponent', () => {
   let component: EditorButtonComponent;
@@ -10,7 +12,8 @@ describe('WysiwygEditorButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorButtonComponent ]
+      declarations: [ EditorButtonComponent, ActionDirective ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));

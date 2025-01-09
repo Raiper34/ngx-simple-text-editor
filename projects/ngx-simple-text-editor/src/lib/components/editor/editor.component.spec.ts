@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {EditorComponent} from './editor.component';
-import {Component} from '@angular/core';
+import {Component, NO_ERRORS_SCHEMA} from '@angular/core';
 import {FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {By} from '@angular/platform-browser';
 import {CommandService} from '../../services/command.service';
@@ -30,6 +30,7 @@ describe('EditorComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TestComponent, EditorComponent ],
       imports: [FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
     TestBed.overrideComponent(EditorComponent, {
       set: {
