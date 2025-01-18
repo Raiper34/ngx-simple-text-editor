@@ -9,7 +9,7 @@
   },
   "npm": {
     "publish": true,
-    "publishPath": "./dist/ngx-simple-text-editor"
+    "publishPath": "dist/ngx-simple-text-editor"
   },
   "plugins": {
     "@release-it/bumper": {
