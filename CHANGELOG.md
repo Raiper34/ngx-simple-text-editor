@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-<!-- auto-changelog-above -->
-
 #### [5.0.2](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.1...5.0.2)
 
 - fix(editor): every click in the toolbar button has been performed form submission [`#24`](https://github.com/Raiper34/ngx-simple-text-editor/issues/24)
+
+<!-- auto-changelog-above -->
 
 #### [5.0.1](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.0...5.0.1)
 
