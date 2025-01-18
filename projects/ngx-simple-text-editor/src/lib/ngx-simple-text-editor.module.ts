@@ -11,6 +11,7 @@ import { DomModifyDirective } from './directives/dom-modify.directive';
 import { SelectionChangeDirective } from './directives/selection-change.directive';
 import { EditorDropdownComponent } from './components/editor-dropdown/editor-dropdown.component';
 import {ActionDirective} from "./directives/action.directive";
+import {NgModelChangeDebouncedDirective} from "./directives/ng-model-change-debounced.directive";
 
 
 
@@ -26,6 +27,7 @@ import {ActionDirective} from "./directives/action.directive";
     SelectionChangeDirective,
     EditorDropdownComponent,
     ActionDirective,
+    NgModelChangeDebouncedDirective,
   ],
   imports: [
     CommonModule,
