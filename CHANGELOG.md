@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [5.0.3](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.2...5.0.3)
+
+- fix(color-picker): attempt to fix nondeterministic color-picker bug logic rewriting [`14ca5c3`](https://github.com/Raiper34/ngx-simple-text-editor/commit/14ca5c3ef2ccda467f367afe275b1b76b3185870)
+
 #### [5.0.2](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.1...5.0.2)
+
+> 9 January 2025
 
 - fix(editor): every click in the toolbar button has been performed form submission [`#24`](https://github.com/Raiper34/ngx-simple-text-editor/issues/24)
 
