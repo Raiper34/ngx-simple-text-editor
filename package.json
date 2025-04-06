@@ -5,9 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "docs": "docsify serve ./docs",
     "build:lib": "ng build ngx-simple-text-editor --configuration production && copy-files-from-to --config projects/ngx-simple-text-editor/copy-files-from-to.json",
-    "build:docs": "copy-files-from-to --config docs/copy-files-from-to.json",
+    "build:docs": "vitepress build && copy-files-from-to --config docs/copy-files-from-to.json",
     "test": "ng test",
     "test:lib": "ng test ngx-simple-text-editor --code-coverage",
     "test:lib:coveralls": "npm run test:lib && cat ./coverage/ngx-simple-text-editor/lcov.info | coveralls",
@@ -21,7 +20,9 @@
     "deploy": "npm run build -- --base-href /demo/ && npm run build:docs && netlify deploy --dir=dist/docs --prod",
     "release": "release-it",
     "commit": "cz",
-    "prepare": "husky"
+    "prepare": "husky",
+    "docs:dev": "vitepress dev",
+    "docs:preview": "vitepress preview"
   },
   "private": true,
   "dependencies": {
@@ -61,7 +62,6 @@
     "copy-files-from-to": "^3.2.2",
     "coveralls": "^3.1.1",
     "cz-conventional-changelog": "^3.3.0",
-    "docsify-cli": "^4.4.4",
     "eslint": "^8.57.0",
     "husky": "^9.1.7",
     "jasmine-core": "~3.99.1",
@@ -77,6 +77,7 @@
     "puppeteer": "^14.4.1",
     "release-it": "^17.11.0",
     "ts-node": "~8.3.0",
-    "typescript": "~5.4.3"
+    "typescript": "~5.4.3",
+    "vitepress": "^1.6.3"
   }
 }

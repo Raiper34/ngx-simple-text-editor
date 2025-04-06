@@ -1,6 +1,6 @@
 # 💻 Usage
 You can use Ngx simple text editor as classic template-driven form input or as reactive form input.
-```angular2html
+```html
 <st-editor [(ngModel)]="content" [config]="config"></st-editor>
 ```
 The editor has got only one @Input with config object, which is optional.
