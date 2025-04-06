@@ -48,3 +48,5 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+.vitepress/cache

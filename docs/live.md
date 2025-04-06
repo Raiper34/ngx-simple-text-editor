@@ -1,3 +1,6 @@
+---
+layout: home
+---
 # Live
 
-[demo](demo ':include :type=iframe width=100% height=700vh')
+<iframe src="demo" style="width: 100%; height: 60vh"/>
