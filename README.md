@@ -93,5 +93,5 @@ export class AppComponent {
 ## 📚 Documentation and demos
 [Online documentation and demos](https://ngx-simple-text-editor.netlify.app/)
 
-## 📖 License
-MIT
+# ⚖️ License
+[MIT](https://choosealicense.com/licenses/mit/)

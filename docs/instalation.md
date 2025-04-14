@@ -1,4 +1,5 @@
 # Getting started
+Installation is performed using `npm`, just pick the right version from the compatibility table.
 
 ## Compatibility
 | Angular version | Ngx simple text editor version | Font awesome version |

@@ -21,14 +21,14 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Getting started',
+        text: '🚀 Getting started',
         items: [
           { text: 'Installation', link: '/instalation' },
           { text: 'Usage', link: '/usage' },
         ]
       },
       {
-        text: 'Customization',
+        text: '🎨 Customization',
         items: [
           { text: 'Buttons', link: '/custom-buttons' },
           { text: 'Style', link: '/custom-style' },
@@ -36,7 +36,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Demo',
+        text: '📽️ Demo',
         items: [
           { text: 'Live', link: '/live' },
           { text: 'Playground', link: '/playground' },
