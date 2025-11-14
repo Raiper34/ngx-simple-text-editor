@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import {EditorComponent} from './editor.component';
 import {Component, NO_ERRORS_SCHEMA} from '@angular/core';
 import {FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
@@ -26,7 +26,7 @@ describe('EditorComponent', () => {
   let fixtureTest: ComponentFixture<TestComponent>;
   let fixtureEditor: ComponentFixture<EditorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent, EditorComponent ],
       imports: [FormsModule],
@@ -57,7 +57,7 @@ describe('EditorComponent', () => {
     expect(componentEditor).toBeTruthy();
   });
 
-  it('should update editor when model variable is updated', async(() => {
+  it('should update editor when model variable is updated', waitForAsync(() => {
     const myValue = 'My value';
     componentTest.content = myValue;
     fixtureTest.detectChanges();
@@ -65,7 +65,7 @@ describe('EditorComponent', () => {
     fixtureTest.whenStable().then(() => expect(area.nativeElement.innerText).toBe(myValue));
   }));
 
-  it('should be disabled when disabled state is active', async(() => {
+  it('should be disabled when disabled state is active', waitForAsync(() => {
     fixtureTest.whenStable().then(() => {
       fixtureTest.detectChanges();
       const area1 = fixtureTest.debugElement.query(By.css('#editor-1 .st-area'));
@@ -75,14 +75,14 @@ describe('EditorComponent', () => {
     });
   }));
 
-  it('should setup placeholder', async(() => {
+  it('should setup placeholder', waitForAsync(() => {
     fixtureTest.whenStable().then(() => {
       const area = fixtureTest.debugElement.query(By.css('.st-area'));
       expect(area.nativeElement.getAttribute('data-placeholder')).toBe('placeholder');
     });
   }));
 
-  it('should call getQueryCommandState', async(() => {
+  it('should call getQueryCommandState', waitForAsync(() => {
     componentEditor.config = {buttons: [UNDO_BUTTON]};
     fixtureEditor.detectChanges();
 
@@ -91,7 +91,7 @@ describe('EditorComponent', () => {
     expect(componentEditor.queryCommandState).toEqual({getQueryCommandState: true});
   }));
 
-  it('should call getQueryCommandState', async(() => {
+  it('should call getQueryCommandState', waitForAsync(() => {
     componentEditor.config = {buttons: [UNDO_BUTTON]};
     fixtureEditor.detectChanges();
 
@@ -100,7 +100,7 @@ describe('EditorComponent', () => {
     expect(componentEditor.queryCommandState).toEqual({getQueryCommandState: true});
   }));
 
-  it('should focus contentEditable and call execCommand', async(() => {
+  it('should focus contentEditable and call execCommand', waitForAsync(() => {
     const service = fixtureEditor.debugElement.injector.get(CommandService);
     componentEditor.config = {buttons: [UNDO_BUTTON]};
     fixtureEditor.detectChanges();
@@ -113,7 +113,7 @@ describe('EditorComponent', () => {
     expect(service.getQueryCommandState).toHaveBeenCalled();
   }));
 
-  it('should call onChange on dom modify', async(() => {
+  it('should call onChange on dom modify', waitForAsync(() => {
     const testHTML = 'Test HTML';
     componentEditor.onChangeFn = jasmine.createSpy('onChangeFn');
 

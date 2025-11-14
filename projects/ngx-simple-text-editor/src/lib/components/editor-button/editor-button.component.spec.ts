@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { EditorButtonComponent } from './editor-button.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
@@ -10,7 +10,7 @@ describe('WysiwygEditorButtonComponent', () => {
   let component: EditorButtonComponent;
   let fixture: ComponentFixture<EditorButtonComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EditorButtonComponent, ActionDirective ],
       schemas: [NO_ERRORS_SCHEMA],

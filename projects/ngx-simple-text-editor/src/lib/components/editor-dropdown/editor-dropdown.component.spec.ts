@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { EditorDropdownComponent } from './editor-dropdown.component';
 import {FormsModule} from '@angular/forms';
 import {EditorDropdown, ToolbarItemType} from '../../models/button';
@@ -18,7 +18,7 @@ describe('EditorDropdownComponent', () => {
   let component: EditorDropdownComponent;
   let fixture: ComponentFixture<EditorDropdownComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EditorDropdownComponent ],
       imports: [FormsModule],

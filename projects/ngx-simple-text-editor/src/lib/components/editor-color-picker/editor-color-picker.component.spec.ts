@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import { EditorColorPickerComponent } from './editor-color-picker.component';
 import {ExecCommand} from '../../models/exec-command';
@@ -10,7 +10,7 @@ describe('EditorColorPickerComponent', () => {
   let component: EditorColorPickerComponent;
   let fixture: ComponentFixture<EditorColorPickerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EditorColorPickerComponent ],
       schemas: [NO_ERRORS_SCHEMA],
