@@ -7,11 +7,12 @@ import {CommandService} from '../../services/command.service';
 import {UNDO_BUTTON} from '../../constants/editor-buttons';
 
 @Component({
-  selector: 'st-test-component',
-  template: `
+    selector: 'st-test-component',
+    template: `
     <st-editor id="editor-1" [(ngModel)]="content" [config]="config"></st-editor>
     <st-editor id="editor-2" [(ngModel)]="content" disabled></st-editor>
-  `
+  `,
+    standalone: false
 })
 class TestComponent {
   content = '';

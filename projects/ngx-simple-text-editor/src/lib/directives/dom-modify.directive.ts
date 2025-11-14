@@ -8,7 +8,8 @@ const MUTATION_OBSERVER_CONFIG = {
 };
 
 @Directive({
-  selector: '[stDomModify]'
+    selector: '[stDomModify]',
+    standalone: false
 })
 export class DomModifyDirective implements OnInit, OnDestroy {
 

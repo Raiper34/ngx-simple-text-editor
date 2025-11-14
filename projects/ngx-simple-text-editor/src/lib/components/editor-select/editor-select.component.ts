@@ -3,9 +3,10 @@ import {EditorSelect} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
 
 @Component({
-  selector: 'st-select',
-  templateUrl: './editor-select.component.html',
-  styleUrls: ['./editor-select.component.scss']
+    selector: 'st-select',
+    templateUrl: './editor-select.component.html',
+    styleUrls: ['./editor-select.component.scss'],
+    standalone: false
 })
 export class EditorSelectComponent implements OnInit {
 
