@@ -6,13 +6,14 @@ import {By} from '@angular/platform-browser';
 const DELAY = 1000;
 
 @Component({
-  selector: 'st-test-component',
-  template: `
+    selector: 'st-test-component',
+    template: `
     <div id="container" (stDomModify)="domModify()">
       <div id="div-1" class="div">Div one</div>
       <div id="div-2" class="div" *ngIf="isDiv2Showed"></div>
     </div>
-  `
+  `,
+    standalone: false
 })
 class TestComponent implements OnInit {
 

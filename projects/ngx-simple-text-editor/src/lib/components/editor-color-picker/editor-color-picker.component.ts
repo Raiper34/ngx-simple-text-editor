@@ -5,9 +5,10 @@ import {ExecCommand} from '../../models/exec-command';
 const DEFAULT_COLOR = '#000000';
 
 @Component({
-  selector: 'st-color-picker',
-  templateUrl: './editor-color-picker.component.html',
-  styleUrls: ['./editor-color-picker.component.scss']
+    selector: 'st-color-picker',
+    templateUrl: './editor-color-picker.component.html',
+    styleUrls: ['./editor-color-picker.component.scss'],
+    standalone: false
 })
 export class EditorColorPickerComponent {
 

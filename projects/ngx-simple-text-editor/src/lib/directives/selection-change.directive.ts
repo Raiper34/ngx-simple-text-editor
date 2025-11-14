@@ -2,7 +2,8 @@ import {Directive, ElementRef, EventEmitter, HostListener, Inject, Output} from 
 import {DOCUMENT} from '@angular/common';
 
 @Directive({
-  selector: '[stSelectionChange]'
+    selector: '[stSelectionChange]',
+    standalone: false
 })
 export class SelectionChangeDirective {
 

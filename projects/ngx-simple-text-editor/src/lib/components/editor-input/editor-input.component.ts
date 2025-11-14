@@ -7,9 +7,10 @@ const APPROX_WIDTH_THRESHOLD = 278;
 const MARGIN_OFFSET = -150;
 
 @Component({
-  selector: 'st-input',
-  templateUrl: './editor-input.component.html',
-  styleUrls: ['./editor-input.component.scss']
+    selector: 'st-input',
+    templateUrl: './editor-input.component.html',
+    styleUrls: ['./editor-input.component.scss'],
+    standalone: false
 })
 export class EditorInputComponent {
 

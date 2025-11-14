@@ -6,7 +6,8 @@ import {debounceTime, distinctUntilChanged, skip} from "rxjs/operators";
 const DEBOUNCE_TIME_MS = 100;
 
 @Directive({
-  selector: '[stNgModelChangeDebounced]',
+    selector: '[stNgModelChangeDebounced]',
+    standalone: false
 })
 export class NgModelChangeDebouncedDirective implements OnInit, OnDestroy {
 

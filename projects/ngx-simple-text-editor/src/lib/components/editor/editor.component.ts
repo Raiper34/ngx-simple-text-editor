@@ -11,13 +11,14 @@ const DEFAULT_CONFIG: EditorConfig = {
 };
 
 @Component({
-  selector: 'st-editor',
-  templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.scss'],
-  providers: [
-    {provide: NG_VALUE_ACCESSOR, useExisting: EditorComponent, multi: true},
-    CommandService
-  ]
+    selector: 'st-editor',
+    templateUrl: './editor.component.html',
+    styleUrls: ['./editor.component.scss'],
+    providers: [
+        { provide: NG_VALUE_ACCESSOR, useExisting: EditorComponent, multi: true },
+        CommandService
+    ],
+    standalone: false
 })
 export class EditorComponent implements AfterViewInit, ControlValueAccessor {
 

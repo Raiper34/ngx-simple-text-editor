@@ -3,9 +3,10 @@ import {EditorDropdown} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
 
 @Component({
-  selector: 'st-dropdown',
-  templateUrl: './editor-dropdown.component.html',
-  styleUrls: ['./editor-dropdown.component.scss']
+    selector: 'st-dropdown',
+    templateUrl: './editor-dropdown.component.html',
+    styleUrls: ['./editor-dropdown.component.scss'],
+    standalone: false
 })
 export class EditorDropdownComponent implements AfterViewInit {
 

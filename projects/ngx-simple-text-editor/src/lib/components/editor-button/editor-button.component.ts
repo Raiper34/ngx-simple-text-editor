@@ -3,9 +3,10 @@ import {EditorButton} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
 
 @Component({
-  selector: 'st-button',
-  templateUrl: './editor-button.component.html',
-  styleUrls: ['./editor-button.component.scss']
+    selector: 'st-button',
+    templateUrl: './editor-button.component.html',
+    styleUrls: ['./editor-button.component.scss'],
+    standalone: false
 })
 export class EditorButtonComponent {
 
