@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { EditorInputComponent } from './editor-input.component';
 import {ToolbarItemType} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
@@ -9,7 +9,7 @@ describe('EditorInputComponent', () => {
   let component: EditorInputComponent;
   let fixture: ComponentFixture<EditorInputComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EditorInputComponent, EditorButtonComponent ],
       schemas: [NO_ERRORS_SCHEMA],
