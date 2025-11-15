@@ -1,13 +1,17 @@
 <st-editor [(ngModel)]="content" [config]="config"></st-editor>
 <br>
-<article class="message">
-  <div class="message-header">
-    <p>Output</p>
-  </div>
-  <div class="message-body code-background">
-            <pre class="code-background white-space-initial">
-              <code *ngIf="content" [highlight]="content"></code> <!-- Workaround for highlight directive -->
-              <code *ngIf="!content"></code> <!-- Workaround for highlight directive -->
-            </pre>
-  </div>
-</article>
+  <article class="message">
+    <div class="message-header">
+      <p>Output</p>
+    </div>
+    <div class="message-body code-background">
+      <pre class="code-background white-space-initial">
+        @if (content) {
+          <code [highlight]="content"></code>
+          } <!-- Workaround for highlight directive -->
+          @if (!content) {
+            <code></code>
+            } <!-- Workaround for highlight directive -->
+          </pre>
+        </div>
+      </article>
