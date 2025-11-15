@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [6.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.3...6.0.0)
+#### [6.0.1](https://github.com/Raiper34/ngx-simple-text-editor/compare/6.0.0...6.0.1)
+
+- docs(readme): fix compatibility table [`acc9185`](https://github.com/Raiper34/ngx-simple-text-editor/commit/acc918587423927aac88c70a414ccdeef9f3aa68)
+
+### [6.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.3...6.0.0)
+
+> 15 November 2025
 
 - docs(usage): add reactive forms sub-chapter into usage chapter [`#23`](https://github.com/Raiper34/ngx-simple-text-editor/issues/23)
 - feat(upgrade): upgrade node to v22.21.1 [`65c7060`](https://github.com/Raiper34/ngx-simple-text-editor/commit/65c7060c91b88f2b04b394790e7cf020cbad11fc)
