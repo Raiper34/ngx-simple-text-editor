@@ -2,7 +2,22 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [6.0.0](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.3...6.0.0)
+
+- docs(usage): add reactive forms sub-chapter into usage chapter [`#23`](https://github.com/Raiper34/ngx-simple-text-editor/issues/23)
+- feat(upgrade): upgrade node to v22.21.1 [`65c7060`](https://github.com/Raiper34/ngx-simple-text-editor/commit/65c7060c91b88f2b04b394790e7cf020cbad11fc)
+- feat(upgrade): upgrade angular t v18 [`c594aff`](https://github.com/Raiper34/ngx-simple-text-editor/commit/c594afff00eaa9b6e0a30a6230e0c3084d6f69f3)
+- feat(upgrade): upgrade angular to v19 [`45c041e`](https://github.com/Raiper34/ngx-simple-text-editor/commit/45c041ef4f3ec490b65cfc74914e572622f350eb)
+- docs(website): new docs website [`0cfa94e`](https://github.com/Raiper34/ngx-simple-text-editor/commit/0cfa94ee903e2efa6636367af0f8d8c2d2005431)
+- feat(upgrade): upgrade to angular v20 [`ead663f`](https://github.com/Raiper34/ngx-simple-text-editor/commit/ead663f11d2dcb0363946a1cfaed4216837f9ac9)
+- docs(site): improve custom buttons documentation on doc site [`ee22b4a`](https://github.com/Raiper34/ngx-simple-text-editor/commit/ee22b4a78aaeaedd10026c375eb11d11dc6f75e8)
+- docs(localization): change localization chapter in website documentation [`ec8ba16`](https://github.com/Raiper34/ngx-simple-text-editor/commit/ec8ba162bfb672f2c0198f31bc90c6819ec90b3d)
+- ci(node): fix node version for circleci [`4249f2b`](https://github.com/Raiper34/ngx-simple-text-editor/commit/4249f2bcf978ce3c085d14456102ea0b812e298e)
+- fix(nvmrc): update node version in nvmrc [`d91a173`](https://github.com/Raiper34/ngx-simple-text-editor/commit/d91a1738c86f8d0a2d6f59fdba60fc83ed64b8fd)
+
 #### [5.0.3](https://github.com/Raiper34/ngx-simple-text-editor/compare/5.0.2...5.0.3)
+
+> 18 January 2025
 
 - fix(color-picker): attempt to fix nondeterministic color-picker bug logic rewriting [`14ca5c3`](https://github.com/Raiper34/ngx-simple-text-editor/commit/14ca5c3ef2ccda467f367afe275b1b76b3185870)
 
