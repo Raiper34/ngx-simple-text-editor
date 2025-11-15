@@ -1,5 +1,5 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Inject, Output} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {Directive, ElementRef, EventEmitter, HostListener, Inject, Output, DOCUMENT} from '@angular/core';
+
 
 @Directive({
     selector: '[stSelectionChange]',

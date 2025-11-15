@@ -1,8 +1,12 @@
 <st-button [button]="button" [state]="state" (command)="openInputWindow()"></st-button>
-<div *ngIf="showInputWindow" #window class="st-input-window" (keyup.escape)="closeInputWindow()" [style.margin-left.px]="margin" [style.opacity]="opacity" tabindex="0">
-  <label *ngIf="button?.label" class="st-input-label" [for]="button?.label">{{button?.label}}</label>
-  <div>
-    <input #input class="st-input-input" type="text" [id]="button?.label" [title]="button?.label" [(ngModel)]="value">
-    <button class="st-input-button" (stAction)="onCommand()">Confirm</button>
+@if (showInputWindow) {
+  <div #window class="st-input-window" (keyup.escape)="closeInputWindow()" [style.margin-left.px]="margin" [style.opacity]="opacity" tabindex="0">
+    @if (button?.label) {
+      <label class="st-input-label" [for]="button?.label">{{button?.label}}</label>
+    }
+    <div>
+      <input #input class="st-input-input" type="text" [id]="button?.label" [title]="button?.label" [(ngModel)]="value">
+      <button class="st-input-button" (stAction)="onCommand()">Confirm</button>
+    </div>
   </div>
-</div>
+}

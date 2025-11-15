@@ -1,28 +1,27 @@
-import { DomModifyDirective } from './dom-modify.directive';
+import {DomModifyDirective} from './dom-modify.directive';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {By} from '@angular/platform-browser';
 
 const DELAY = 1000;
 
 @Component({
-    selector: 'st-test-component',
-    template: `
+  selector: 'st-test-component',
+  template: `
     <div id="container" (stDomModify)="domModify()">
       <div id="div-1" class="div">Div one</div>
-      <div id="div-2" class="div" *ngIf="isDiv2Showed"></div>
+      @if (isDiv2Showed) {
+        <div id="div-2" class="div"></div>
+      }
     </div>
   `,
-    standalone: false
+  standalone: false
 })
-class TestComponent implements OnInit {
+class TestComponent {
 
   isDiv2Showed = false;
 
-  domModify(): void {}
-
-  ngOnInit(): void {
-    setTimeout(() => this.isDiv2Showed = true, DELAY);
+  domModify(): void {
   }
 }
 
@@ -46,14 +45,16 @@ describe('DomModifyDirective', () => {
 
   it(`dom should be modified after ${DELAY} ms`, (done) => {
     fixture.componentInstance.domModify = jasmine.createSpy('domModify');
-    fixture.componentInstance.ngOnInit();
     expect(fixture.debugElement.queryAll(By.css('.div')).length).toBe(1);
+
+    fixture.componentInstance.isDiv2Showed = true;
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.queryAll(By.css('.div')).length).toBe(2);
+    expect(fixture.debugElement.queryAll(By.css('#div-2')).length).toBeTruthy();
     setTimeout(() => {
       expect(fixture.componentInstance.domModify).toHaveBeenCalled();
-      fixture.detectChanges();
-      expect(fixture.debugElement.queryAll(By.css('.div')).length).toBe(2);
-      expect(fixture.debugElement.queryAll(By.css('#div-2')).length).toBeTruthy();
       done();
-    }, DELAY);
+    });
   });
 });

@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Output, Input, HostListener, ElementRef, ViewChild, Inject} from '@angular/core';
+import {Component, EventEmitter, Output, Input, HostListener, ElementRef, ViewChild, Inject, DOCUMENT} from '@angular/core';
 import {EditorInput} from '../../models/button';
 import {ExecCommand} from '../../models/exec-command';
-import {DOCUMENT} from '@angular/common';
+
 
 const APPROX_WIDTH_THRESHOLD = 278;
 const MARGIN_OFFSET = -150;

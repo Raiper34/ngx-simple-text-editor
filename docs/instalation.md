@@ -9,6 +9,7 @@ Installation is performed using `npm`, just pick the right version from the comp
 | 15              | 3.x.x                          | 5.0.0-6.x.x          |
 | 16              | 4.x.x                          | 5.0.0-6.x.x          |
 | 17 - 19         | 5.x.x                          | 5.0.0-6.x.x          |
+| 20              | 6.x.x                          | 5.0.0-6.x.x          |
 
 
 ## Instalation

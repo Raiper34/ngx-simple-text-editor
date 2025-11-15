@@ -1,4 +1,4 @@
-import {Inject, Injectable} from '@angular/core';
+import {Inject, Injectable, DOCUMENT} from '@angular/core';
 import {
   EditorButton,
   EditorColor,
@@ -6,7 +6,7 @@ import {
   ToolbarItem,
   ToolbarItemType
 } from '../models/button';
-import {DOCUMENT} from '@angular/common';
+
 
 @Injectable()
 export class CommandService {
