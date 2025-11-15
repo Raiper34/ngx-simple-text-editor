@@ -35,7 +35,7 @@ The key features of this editor are simplicity, cross-browser compatibility, and
 | 15              | 3.x.x                          | 5.0.0-6.x.x          |
 | 16              | 4.x.x                          | 5.0.0-6.x.x          |
 | 17 - 19         | 5.x.x                          | 5.0.0-6.x.x          |
-| 18              | 6.x.x                          | 5.0.0-6.x.x          |
+| 20              | 6.x.x                          | 5.0.0-6.x.x          |
 
 ## 🚀 Instalation
 
