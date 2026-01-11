@@ -2,7 +2,20 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [6.0.2](https://github.com/Raiper34/ngx-simple-text-editor/compare/6.0.1...6.0.2)
+
+- feat(upgrade): upgrade node to v22.21.1 [`f983ca2`](https://github.com/Raiper34/ngx-simple-text-editor/commit/f983ca2bdd9afd4612aee0cc24f3a0aad3a6dac4)
+- feat(upgrade): upgrade angular t v18 [`741e7f7`](https://github.com/Raiper34/ngx-simple-text-editor/commit/741e7f789c1206136a19c41a96fa85787e5a6392)
+- feat(upgrade): upgrade angular to v19 [`c1c75a5`](https://github.com/Raiper34/ngx-simple-text-editor/commit/c1c75a5228f65b3712af0fe0ff51106adff40fb8)
+- feat(upgrade): upgrade to angular v20 [`716ba1b`](https://github.com/Raiper34/ngx-simple-text-editor/commit/716ba1bd65193cfa15b5563c9cffd7b88220383e)
+- fix(package): make peer dependency more general, font awesome can be used from v5 and above [`0a8d3d7`](https://github.com/Raiper34/ngx-simple-text-editor/commit/0a8d3d7334c47e921a73e8bf3b70aacecbf4024e)
+- docs(readme): fix compatibility table [`551fdc7`](https://github.com/Raiper34/ngx-simple-text-editor/commit/551fdc76611f18466c9687c17485ff0644b250e3)
+- ci(node): fix node version for circleci [`06dd60f`](https://github.com/Raiper34/ngx-simple-text-editor/commit/06dd60f8ccba50ab788b5251f2b80cbca295dfd0)
+- fix(nvmrc): update node version in nvmrc [`cd2050f`](https://github.com/Raiper34/ngx-simple-text-editor/commit/cd2050f5f10920800d16ea64c78ffb2e81af5de9)
+
 #### [6.0.1](https://github.com/Raiper34/ngx-simple-text-editor/compare/6.0.0...6.0.1)
+
+> 15 November 2025
 
 - docs(readme): fix compatibility table [`acc9185`](https://github.com/Raiper34/ngx-simple-text-editor/commit/acc918587423927aac88c70a414ccdeef9f3aa68)
 
