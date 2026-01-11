@@ -4,7 +4,7 @@
   },
   "copyFiles": [
     {
-      "from": "../dist/ngx-simple-text-editor-app/*",
+      "from": "../dist/ngx-simple-text-editor-app/browser/*",
       "to": "../dist/docs/demo"
     },
     {
